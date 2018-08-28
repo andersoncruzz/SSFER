@@ -3,10 +3,8 @@ import cv2
 import numpy as np
 
 class FaceDetector:
-    # def __init__(self):
-    #     pass
 
-    def detectViolaJones(self, img, SF = 1.01, casc_path):
+    def detectViolaJones(self, image, SF=1.01, casc_path="haarcascade_file.xml"):
         #TODO: Verify params ViolaJones, IS REALLY VIOLA JONES ALGORITHM?
         cascade_classifier = cv2.CascadeClassifier(casc_path)
         faces = cascade_classifier.detectMultiScale(
@@ -17,7 +15,7 @@ class FaceDetector:
         # None is we don't found an image
         if not len(faces) > 0:
             #print ("No hay caras")
-            return None
+            return []
 
         max_area_face = faces[0]
         for face in faces:
@@ -27,7 +25,7 @@ class FaceDetector:
             face = max_area_face
             print(face)
             #image = image[face[1]:(face[1] + face[2]), face[0]:(face[0] + face[3])]
-
+        return faces
 
     def detectHogSVM(self, img):
         return face_recognition.face_locations(img)
