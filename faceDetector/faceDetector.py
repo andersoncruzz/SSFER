@@ -1,10 +1,27 @@
 import face_recognition
 import cv2
 import numpy as np
+import os
+
+# Viola Jones:  [49520, 45794, 0, 0]
+# HOG SVM:  [54790, 40524, 0, 0]
+# CNN:  [79966, 15348, 0, 0]
+
+#DATABASE FER
+# Viola Jones:  [21855, 73459, 0, 0]
+# HOG SVM:  [54790, 40524, 0, 0]
+# CNN:  [79966, 15348, 0, 0]
+
+#VOC2007
+# 4952/4952 100.00%
+# Viola Jones:  [507, 2905, 1500, 40]
+# HOG SVM:  [711, 2915, 1296, 30]
+# CNN:  [829, 2932, 1178, 13]
+
 
 class FaceDetector:
 
-    def detectViolaJones(self, image, SF=1.01, casc_path="haarcascade_file.xml"):
+    def detectViolaJones(self, image, SF=1.3, casc_path=os.path.join(os.path.dirname(os.path.realpath(__file__)), "haarcascade_file.xml")):
         #TODO: Verify params ViolaJones, IS REALLY VIOLA JONES ALGORITHM?
         cascade_classifier = cv2.CascadeClassifier(casc_path)
         faces = cascade_classifier.detectMultiScale(
@@ -23,7 +40,7 @@ class FaceDetector:
                 max_area_face = face
             # Chop image to face
             face = max_area_face
-            print(face)
+            #print(face)
             #image = image[face[1]:(face[1] + face[2]), face[0]:(face[0] + face[3])]
         return faces
 

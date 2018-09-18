@@ -1,7 +1,7 @@
 import os
 
 fileDir = os.path.dirname(os.path.realpath(__file__))
-pwd = os.path.join(fileDir, "..", "databases")
+pwd = os.path.join(fileDir, "..", "databases", "original")
 
 def getDataAndLabelsPath():
     # CIFE_DATA = os.path.join(pwd, 'CIFE-data-tr-ts.npy')
