@@ -1,11 +1,13 @@
 # from classifiers.alexnet import Alexnet
 from classifiers.vgg import Vgg
-from classifiers.utils import *
+from classifiers.alexnet import Alexnet
+from classifiers.common import *
 from keras.datasets import mnist
 import numpy as np
 from keras import backend as K
 import keras
 import cv2
+
 
 def resizeAllImages(imgs, size):
     new_imgs = []
@@ -13,10 +15,11 @@ def resizeAllImages(imgs, size):
         if img.shape != ():
             new_img = cv2.resize(img, size)
             new_imgs.append(new_img)
+
     return np.asarray(new_imgs)
 
 
-batch_size = 128
+batch_size = 16
 num_classes = 10
 epochs = 12
 
@@ -51,7 +54,13 @@ y_train = keras.utils.to_categorical(y_train, num_classes)
 y_test = keras.utils.to_categorical(y_test, num_classes)
 
 net = Vgg()
-model = net.build_network(input_shape, num_classes)
-
-teste = train(model, x_train, y_train, x_test, y_test, batch_size, epochs)
+print("[+] VGG")
+net = net.build_network(input_shape, num_classes)
+print("[+] LAST LAYER")
+model =  add_last_layer(net, num_classes)
+print("[+] COMPILE")
+model = compile_net(model)
+print("[+] TRAIN")
+teste = train(model, x_train, y_train, x_test, y_test, batch_size, epochs, "mnist")
+print("[+] EVALUATE")
 score = evaluate(teste, x_test, y_test)

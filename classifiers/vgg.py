@@ -108,10 +108,4 @@ class Vgg:
         model.add(Dense(4096, activation='relu', name='fc1'))
         model.add(Dense(4096, activation='relu', name='fc2'))
 
-        model.add(Dense(num_classes, activation='softmax', name='predictions'))
-
-        print("aqui")
-        model.compile(loss=keras.losses.categorical_crossentropy,
-                      optimizer=keras.optimizers.Adadelta(),
-                      metrics=['accuracy'])
         return model
