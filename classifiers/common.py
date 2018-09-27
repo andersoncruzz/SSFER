@@ -3,7 +3,7 @@ from keras.layers import Dense
 from keras.callbacks import ModelCheckpoint
 import os
 
-def train(model, x_train, y_train, x_test, y_test, batch_size, epochs, path_dir):
+def train(model, x_train, y_train, x_test, y_test, batch_size, epochs, path_dir, split):
     try:
         os.mkdir(path_dir)
     except:
@@ -16,9 +16,10 @@ def train(model, x_train, y_train, x_test, y_test, batch_size, epochs, path_dir)
     model.fit(x_train, y_train,
                   batch_size = batch_size,
                   epochs = epochs,
-                  verbose = 1,
-                  # validation_split = 0.2,
-                  validation_data=(x_test, y_test),
+                  verbose = 2,
+                  shuffle = True,
+                  validation_split = split,
+                  # validation_data=(x_test, y_test),
                   callbacks = callbacks_list)
 
     return model
