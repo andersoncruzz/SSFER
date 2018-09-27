@@ -1,7 +1,7 @@
 import keras.applications as classifiers
 
 
-class VGG16:
+class VGG19:
     def build_network(self, input_shape, num_classes):
         model = classifiers.vgg16.VGG16(include_top=True,
                                         weights=None,
