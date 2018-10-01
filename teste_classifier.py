@@ -19,12 +19,12 @@ def resizeAllImages(imgs, size):
     return np.asarray(new_imgs)
 
 
-batch_size = 16
+batch_size = 10
 num_classes = 10
 epochs = 12
 
 # input image dimensions
-img_rows, img_cols = 90, 90
+img_rows, img_cols = 80, 80
 
 # the data, split between train and test sets
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
@@ -53,8 +53,8 @@ print(x_test.shape[0], 'test samples')
 y_train = keras.utils.to_categorical(y_train, num_classes)
 y_test = keras.utils.to_categorical(y_test, num_classes)
 
-net = Vgg()
-print("[+] VGG")
+net = Alexnet()
+print("[+] ALEXNET")
 net = net.build_network(input_shape, num_classes)
 print("[+] LAST LAYER")
 model =  add_last_layer(net, num_classes)
@@ -64,3 +64,4 @@ print("[+] TRAIN")
 teste = train(model, x_train, y_train, x_test, y_test, batch_size, epochs, "mnist")
 print("[+] EVALUATE")
 score = evaluate(teste, x_test, y_test)
+print("[+] Score: ", score)

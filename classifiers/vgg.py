@@ -11,11 +11,12 @@ from keras.layers import Dense, Dropout, Flatten
 from keras.layers import Conv2D, MaxPooling2D
 # from keras import backend as K
 import tensorflow as tf
-from keras.backend.tensorflow_backend import set_session
-# K.set_image_dim_ordering('th')
-config = tf.ConfigProto()
-config.gpu_options.per_process_gpu_memory_fraction = 0.87
-set_session(tf.Session(config=config))
+
+# from keras.backend.tensorflow_backend import set_session
+# # K.set_image_dim_ordering('th')
+# config = tf.ConfigProto()
+# config.gpu_options.per_process_gpu_memory_fraction = 0.95
+# set_session(tf.Session(config=config))
 
 class Vgg:
     def build_network(self, input_shape, num_classes):

@@ -1,5 +1,13 @@
 from keras_classifier.vgg16 import VGG16
 
+from classifiers.common import *
+from keras.datasets import mnist
+import numpy as np
+from keras import backend as K
+import keras
+import cv2
+
+
 def resizeAllImages(imgs, size):
     new_imgs = []
     for img in imgs:
@@ -44,8 +52,7 @@ print(x_test.shape[0], 'test samples')
 y_train = keras.utils.to_categorical(y_train, num_classes)
 y_test = keras.utils.to_categorical(y_test, num_classes)
 
-print("[+] ALEXNET")
-# net = Alexnet()
+print("[+] VGG")
 net = VGG16()
 
 print("[+] BUILD")
