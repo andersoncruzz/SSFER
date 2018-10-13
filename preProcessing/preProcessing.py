@@ -7,6 +7,34 @@ import os
 
 class PreProcessing:
 
+    def load_base(self, path):
+        pwd = os.path.join(path, "images")
+        CIFE_TR_DATA = os.path.join(pwd, 'CIFE-data-tr.npy')
+        CIFE_TS_DATA = os.path.join(pwd, 'CIFE-data-ts.npy')
+        CK_DATA = os.path.join(pwd, 'ck+-data.npy')
+        FER_DATA = os.path.join(pwd, 'fer_data.npy')
+        JAFFE_DATA = os.path.join(pwd, 'JAFFE-data.npy')
+        KDEF_DATA = os.path.join(pwd, 'KDEF-data.npy')
+        NOVAEMOTIONS_DATA = os.path.join(pwd, 'novaemotions-data.npy')
+        RAFD_DATA = os.path.join(pwd, 'RafD-data.npy')
+
+        images = np.concatenate((CIFE_TR_DATA, CIFE_TS_DATA, CK_DATA, FER_DATA, JAFFE_DATA, KDEF_DATA, NOVAEMOTIONS_DATA, RAFD_DATA), axis=0))
+
+        pwd = os.path.join(path, "labels")
+        CIFE_TR_DATA = os.path.join(pwd, 'CIFE-data-tr.npy')
+        CIFE_TS_DATA = os.path.join(pwd, 'CIFE-data-ts.npy')
+        CK_DATA = os.path.join(pwd, 'ck+-data.npy')
+        FER_DATA = os.path.join(pwd, 'fer_data.npy')
+        JAFFE_DATA = os.path.join(pwd, 'JAFFE-data.npy')
+        KDEF_DATA = os.path.join(pwd, 'KDEF-data.npy')
+        NOVAEMOTIONS_DATA = os.path.join(pwd, 'novaemotions-data.npy')
+        RAFD_DATA = os.path.join(pwd, 'RafD-data.npy')
+
+        labels = np.concatenate((CIFE_TR_DATA, CIFE_TS_DATA, CK_DATA, FER_DATA, JAFFE_DATA, KDEF_DATA, NOVAEMOTIONS_DATA, RAFD_DATA), axis=0))
+
+        return images, labels
+
+
     def generate_images_with_size(self, size, save=True, paths=None, path_output=None, faceDetector=None):
         # CIFE_DATA, CK_DATA, FER_DATA, JAFFE_DATA, KDEF_DATA, NOVAEMOTIONS_DATA, RAFD_DATA = getDataPath()
         if paths == None:

@@ -6,7 +6,9 @@ import numpy as np
 from keras import backend as K
 import keras
 import cv2
+from preProcessing.preProcessing import PreProcessing
 
+preProcessing = PreProcessing()
 
 batch_size = 16
 num_classes = 7
@@ -15,7 +17,8 @@ epochs = 1000
 # input image dimensions
 img_rows, img_cols = 60, 60
 
-x_train = resizeAllImages(x_train, (img_rows, img_cols))
+base_dir = "output_60"
+x_train, y_train = preProcessing.load_base(base_dir)
 
 if K.image_data_format() == 'channels_first':
     x_train = x_train.reshape(x_train.shape[0], 3, img_rows, img_cols)
