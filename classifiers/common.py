@@ -14,13 +14,13 @@ def train(model, x_train, y_train, x_test, y_test, batch_size, epochs, path_dir,
         pass
 
     filepath = os.path.join(path_dir, "weights.{epoch:02d}-{val_loss:.2f}.hdf5")
-    checkpoint = ModelCheckpoint(filepath, monitor='loss', verbose=1, save_best_only=True, mode='min')
+    checkpoint = ModelCheckpoint(filepath, monitor='val_loss', verbose=1, save_best_only=True, mode='min')
     callbacks_list = [checkpoint]
 
     model.fit(x_train, y_train,
                   batch_size = batch_size,
                   epochs = epochs,
-                  verbose = 2,
+                  verbose = 1,
                   shuffle = True,
                   validation_split = split,
                   # validation_data=(x_test, y_test),
