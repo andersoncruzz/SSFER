@@ -9,28 +9,28 @@ class PreProcessing:
 
     def load_base(self, path):
         pwd = os.path.join(path, "images")
-        CIFE_TR_DATA = os.path.join(pwd, 'CIFE-data-tr.npy')
-        CIFE_TS_DATA = os.path.join(pwd, 'CIFE-data-ts.npy')
-        CK_DATA = os.path.join(pwd, 'ck+-data.npy')
-        FER_DATA = os.path.join(pwd, 'fer_data.npy')
-        JAFFE_DATA = os.path.join(pwd, 'JAFFE-data.npy')
-        KDEF_DATA = os.path.join(pwd, 'KDEF-data.npy')
-        NOVAEMOTIONS_DATA = os.path.join(pwd, 'novaemotions-data.npy')
-        RAFD_DATA = os.path.join(pwd, 'RafD-data.npy')
+        CIFE_TR_DATA = np.load(os.path.join(pwd, 'CIFE-data-tr.npy'))
+        CIFE_TS_DATA = np.load(os.path.join(pwd, 'CIFE-data-ts.npy'))
+        CK_DATA = np.load(os.path.join(pwd, 'ck+-data.npy'))
+        FER_DATA = np.load(os.path.join(pwd, 'fer_data.npy'))
+        JAFFE_DATA = np.load(os.path.join(pwd, 'JAFFE-data.npy'))
+        KDEF_DATA = np.load(os.path.join(pwd, 'KDEF-data.npy'))
+        NOVAEMOTIONS_DATA = np.load(os.path.join(pwd, 'novaemotions-data.npy'))
+        RAFD_DATA = np.load(os.path.join(pwd, 'RafD-data.npy'))
 
-        images = np.concatenate((CIFE_TR_DATA, CIFE_TS_DATA, CK_DATA, FER_DATA, JAFFE_DATA, KDEF_DATA, NOVAEMOTIONS_DATA, RAFD_DATA), axis=0))
+        images = np.concatenate((CIFE_TR_DATA, CIFE_TS_DATA, CK_DATA, FER_DATA, JAFFE_DATA, KDEF_DATA, NOVAEMOTIONS_DATA, RAFD_DATA), axis=0)
 
         pwd = os.path.join(path, "labels")
-        CIFE_TR_DATA = os.path.join(pwd, 'CIFE-data-tr.npy')
-        CIFE_TS_DATA = os.path.join(pwd, 'CIFE-data-ts.npy')
-        CK_DATA = os.path.join(pwd, 'ck+-data.npy')
-        FER_DATA = os.path.join(pwd, 'fer_data.npy')
-        JAFFE_DATA = os.path.join(pwd, 'JAFFE-data.npy')
-        KDEF_DATA = os.path.join(pwd, 'KDEF-data.npy')
-        NOVAEMOTIONS_DATA = os.path.join(pwd, 'novaemotions-data.npy')
-        RAFD_DATA = os.path.join(pwd, 'RafD-data.npy')
+        CIFE_TR_DATA = np.load(os.path.join(pwd, 'CIFE-label-tr.npy'))
+        CIFE_TS_DATA = np.load(os.path.join(pwd, 'CIFE-label-ts.npy'))
+        CK_DATA = np.load(os.path.join(pwd, 'ck+-label.npy'))
+        FER_DATA = np.load(os.path.join(pwd, 'fer_labels.npy'))
+        JAFFE_DATA = np.load(os.path.join(pwd, 'JAFFE-label.npy'))
+        KDEF_DATA = np.load(os.path.join(pwd, 'KDEF-label.npy'))
+        NOVAEMOTIONS_DATA = np.load(os.path.join(pwd, 'novaemotions-label.npy'))
+        RAFD_DATA = np.load(os.path.join(pwd, 'RafD-label.npy'))
 
-        labels = np.concatenate((CIFE_TR_DATA, CIFE_TS_DATA, CK_DATA, FER_DATA, JAFFE_DATA, KDEF_DATA, NOVAEMOTIONS_DATA, RAFD_DATA), axis=0))
+        labels = np.concatenate((CIFE_TR_DATA, CIFE_TS_DATA, CK_DATA, FER_DATA, JAFFE_DATA, KDEF_DATA, NOVAEMOTIONS_DATA, RAFD_DATA), axis=0)
 
         return images, labels
 
@@ -98,16 +98,16 @@ class PreProcessing:
 
             if coordinates != []:
                 bbox = coordinates[0]
-                cv2.imshow("img1", images[index])
-                cv2.waitKey(25)
-                # print(bbox)
+                # cv2.imshow("img1", images[index])
+                # cv2.waitKey(25)
+                print(index)
                 img = images[index]
                 img = img[bbox[0]:bbox[2], bbox[3]:bbox[1]]
 
                 img = cv2.resize(img, (size, size))
 
                 cv2.imshow("img-cropped-RSZ", img)
-                cv2.waitKey(25)
+                cv2.waitKey(10)
 
                 new_labels.append(labels[index])
                 new_images.append(img)
@@ -133,7 +133,7 @@ class PreProcessing:
             np.save(file_label_name, new_labels)
 
 
-        return len(images)
+        return len(new_images)
 
     def save_images_labels_size(self, size, faceDetector, path_output):
         # images_paths, labels_paths = getDataAndLabelsPath()
