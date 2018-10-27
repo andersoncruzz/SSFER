@@ -1,7 +1,11 @@
 import os
 
 fileDir = os.path.dirname(os.path.realpath(__file__))
-pwd = os.path.join(fileDir, "..", "dbs_original_at")
+pwd = os.path.join(fileDir, "..", "emotions_database_originals")
+
+def getDivisionDatabasesForExperimental():
+    return "training", "testing", "validation"
+
 
 def getDataAndLabelsPath():
     # CIFE_DATA = os.path.join(pwd, 'CIFE-data-tr-ts.npy')

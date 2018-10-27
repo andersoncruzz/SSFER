@@ -7,6 +7,58 @@ import os
 
 class PreProcessing:
 
+    def load_base_input_experiment(self, path):
+        pwd = os.path.join(path, "training")
+        CIFE_TR_DATA = np.load(os.path.join(pwd, 'CIFE-data-tr.npy'))
+        CIFE_TS_DATA = np.load(os.path.join(pwd, 'CIFE-data-ts.npy'))
+        CK_DATA = np.load(os.path.join(pwd, 'ck+-data.npy'))
+        FER_DATA = np.load(os.path.join(pwd, 'fer_data.npy'))
+        JAFFE_DATA = np.load(os.path.join(pwd, 'JAFFE-data.npy'))
+        KDEF_DATA = np.load(os.path.join(pwd, 'KDEF-data.npy'))
+        NOVAEMOTIONS_DATA = np.load(os.path.join(pwd, 'novaemotions-data.npy'))
+        RAFD_DATA = np.load(os.path.join(pwd, 'RafD-data.npy'))
+
+        x_train = np.concatenate((CIFE_TR_DATA, CIFE_TS_DATA, CK_DATA, FER_DATA, JAFFE_DATA, KDEF_DATA, NOVAEMOTIONS_DATA, RAFD_DATA), axis=0)
+
+        pwd = os.path.join(path, "training")
+        CIFE_TR_DATA = np.load(os.path.join(pwd, 'CIFE-label-tr.npy'))
+        CIFE_TS_DATA = np.load(os.path.join(pwd, 'CIFE-label-ts.npy'))
+        CK_DATA = np.load(os.path.join(pwd, 'ck+-label.npy'))
+        FER_DATA = np.load(os.path.join(pwd, 'fer_labels.npy'))
+        JAFFE_DATA = np.load(os.path.join(pwd, 'JAFFE-label.npy'))
+        KDEF_DATA = np.load(os.path.join(pwd, 'KDEF-label.npy'))
+        NOVAEMOTIONS_DATA = np.load(os.path.join(pwd, 'novaemotions-label.npy'))
+        RAFD_DATA = np.load(os.path.join(pwd, 'RafD-label.npy'))
+
+        y_train = np.concatenate((CIFE_TR_DATA, CIFE_TS_DATA, CK_DATA, FER_DATA, JAFFE_DATA, KDEF_DATA, NOVAEMOTIONS_DATA, RAFD_DATA), axis=0)
+
+        pwd = os.path.join(path, "testing")
+        CIFE_TR_DATA = np.load(os.path.join(pwd, 'CIFE-data-tr.npy'))
+        CIFE_TS_DATA = np.load(os.path.join(pwd, 'CIFE-data-ts.npy'))
+        CK_DATA = np.load(os.path.join(pwd, 'ck+-data.npy'))
+        FER_DATA = np.load(os.path.join(pwd, 'fer_data.npy'))
+        JAFFE_DATA = np.load(os.path.join(pwd, 'JAFFE-data.npy'))
+        KDEF_DATA = np.load(os.path.join(pwd, 'KDEF-data.npy'))
+        NOVAEMOTIONS_DATA = np.load(os.path.join(pwd, 'novaemotions-data.npy'))
+        RAFD_DATA = np.load(os.path.join(pwd, 'RafD-data.npy'))
+
+        x_test = np.concatenate((CIFE_TR_DATA, CIFE_TS_DATA, CK_DATA, FER_DATA, JAFFE_DATA, KDEF_DATA, NOVAEMOTIONS_DATA, RAFD_DATA), axis=0)
+
+        pwd = os.path.join(path, "testing")
+        CIFE_TR_DATA = np.load(os.path.join(pwd, 'CIFE-label-tr.npy'))
+        CIFE_TS_DATA = np.load(os.path.join(pwd, 'CIFE-label-ts.npy'))
+        CK_DATA = np.load(os.path.join(pwd, 'ck+-label.npy'))
+        FER_DATA = np.load(os.path.join(pwd, 'fer_labels.npy'))
+        JAFFE_DATA = np.load(os.path.join(pwd, 'JAFFE-label.npy'))
+        KDEF_DATA = np.load(os.path.join(pwd, 'KDEF-label.npy'))
+        NOVAEMOTIONS_DATA = np.load(os.path.join(pwd, 'novaemotions-label.npy'))
+        RAFD_DATA = np.load(os.path.join(pwd, 'RafD-label.npy'))
+
+        y_test = np.concatenate((CIFE_TR_DATA, CIFE_TS_DATA, CK_DATA, FER_DATA, JAFFE_DATA, KDEF_DATA, NOVAEMOTIONS_DATA, RAFD_DATA), axis=0)
+
+        return x_train, y_train, x_test, y_test
+
+
     def load_base(self, path):
         pwd = os.path.join(path, "images")
         CIFE_TR_DATA = np.load(os.path.join(pwd, 'CIFE-data-tr.npy'))

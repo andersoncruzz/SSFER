@@ -19,6 +19,9 @@ import os
 # CNN:  [829, 2932, 1178, 13]
 
 
+
+#TODO: To add MTCNN DETECTOR NEURAL NETWORK
+
 class FaceDetector:
 
     def detectViolaJones(self, image, SF=1.3, casc_path=os.path.join(os.path.dirname(os.path.realpath(__file__)), "haarcascade_file.xml")):
