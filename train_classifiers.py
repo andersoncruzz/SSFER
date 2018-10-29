@@ -15,26 +15,47 @@ import cv2
 from preProcessing.preProcessing import PreProcessing
 from utils.functions import make_dirs, get_date_string
 import os
+import argparse
+
+ap = argparse.ArgumentParser()
+ap.add_argument("-i", "--img_size", required=True, type=int,
+	help="img_size")
+ap.add_argument("-lr", "--learning_rate", required=True, type=float,
+	help="learning_rate")
+ap.add_argument("-opt", "--optimizer", required=True, type=int,
+	help="optmizer")
+ap.add_argument("-arc", "--architecture", required=True, type=int,
+	help="architecture")
+ap.add_argument("-batch", "--batch_size", required=True, type=int,
+	help="architecture")
+
+args = vars(ap.parse_args())
 
 preProcessing = PreProcessing()
 common = Common()
 
-IMG_SIZE = 110
-LEARNING_RATE = 0.01
+# IMG_SIZE = 110
+# LEARNING_RATE = 0.01
+# BATCH_SIZE = 28
+IMG_SIZE = args["img_size"]
+LEARNING_RATE = args["learning_rate"]
+BATCH_SIZE = args["batch_size"]
+
 
 OPTIMIZERS = ["Adadelta", "SGD", "Nadam", "RMSprop"]
-OPTIMIZER = OPTIMIZERS[0]
+# OPTIMIZER = OPTIMIZERS[0]
+OPTIMIZER = OPTIMIZERS[args["optimizer"]]
 
 ARCHITECTURES = ["VGG16", "VGG19", "MobileNet", "MobileNetV2",
                 "ResNet50", "InceptionV3", "InceptionResNetV2"]
-ARCHITECTURE = ARCHITECTURES[3]
+# ARCHITECTURE = ARCHITECTURES[3]
+ARCHITECTURE = ARCHITECTURES[args["architecture"]]
 
 ROOT_OUTPUT = "models_experiment"
 EXPERIMENT_ID = ARCHITECTURE + "+" + str(IMG_SIZE) + "+" + get_date_string()
 output_path = os.path.join(ROOT_OUTPUT, EXPERIMENT_ID)
 make_dirs(output_path)
 
-BATCH_SIZE = 28
 NUM_CLASSES = 7
 EPOCHS = 1000
 
