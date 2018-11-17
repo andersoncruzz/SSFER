@@ -29,11 +29,11 @@ def get_emotion(net, img, coordinate):
     # cv2.imshow("cropped", img_cropped)
     # cv2.waitKey(1)
 
-    img_cropped = cv2.resize(img_cropped, (80, 80))
-    img_cropped = np.array(img_cropped)
-    img_cropped = img_cropped.reshape(1, 80, 80, 3)
-    predictions = net.predict([np.array(img_cropped)])
-    index_emotion = np.argmax(predictions[0])
+    # img_cropped = cv2.resize(img_cropped, (80, 80))
+    # img_cropped = np.array(img_cropped)
+    # img_cropped = img_cropped.reshape(1, 80, 80, 3)
+    # predictions = net.predict([np.array(img_cropped)])
+    # index_emotion = np.argmax(predictions[0])
 
     return 6
 
