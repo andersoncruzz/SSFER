@@ -12,40 +12,45 @@ import sys, os
 from faceDetector.faceDetector import FaceDetector
 import numpy as np
 
-def padding_bounding_box(bbs, img_size, padding=32):
-    bounding_boxxes = []
-    for bb in bbs:
-        bounding_box = np.zeros(4, dtype=np.int32)
+def padding_bounding_box(bb, img_size, padding=32):
+    bounding_box = np.zeros(4, dtype=np.int32)
 
-        bounding_box[0] = np.maximum(bb[3] - padding / 2, 0)
-        bounding_box[1] = np.maximum(bb[0] - padding / 2, 0)
-        bounding_box[2] = np.minimum(bb[1] + padding / 2, img_size[1])
-        bounding_box[3] = np.minimum(bb[2] + padding / 2, img_size[0])
-        bounding_boxxes.append(bounding_box)
+    bounding_box[0] = np.maximum(bb[3] - padding / 2, 0)
+    bounding_box[1] = np.maximum(bb[0] - padding / 2, 0)
+    bounding_box[2] = np.minimum(bb[1] + padding / 2, img_size[1])
+    bounding_box[3] = np.minimum(bb[2] + padding / 2, img_size[0])
 
-    return bounding_boxxes
+    return bounding_box
 
+
+def get_emotion(net, img, coordinate):
+
+    img_cropped = img[coordinate[0]:coordinate[2], coordinate[3]:coordinate[1]]
+    # cv2.imshow("cropped", img_cropped)
+    # cv2.waitKey(1)
+
+    img_cropped = cv2.resize(img_cropped, (80, 80))
+    img_cropped = np.array(img_cropped)
+    img_cropped = img_cropped.reshape(1, 80, 80, 3)
+    predictions = net.predict([np.array(img_cropped)])
+    index_emotion = np.argmax(predictions[0])
+
+    return 6
 
 def classify(net, img, faceDetector):
     faces = []
-    # img = cv2.resize(img, (80, 80))
-    # img = np.array(img)
-    # img = img.reshape(1, 80, 80, 3)
-    # predictions = net.predict([np.array(img)])
-    # index_emotion = np.argmax(predictions[0])
     img_size = np.asarray(img.shape)[0:2]
     coordinates = faceDetector.detectHogSVM(img)
-    coordinates = padding_bounding_box(coordinates, img_size)
 
     for coordinate in coordinates:
         face = {}
-        face["bounding_box"] = coordinate
-        face["emotion"] = "Neutralidade"
+        face["bounding_box"] = padding_bounding_box(coordinate, img_size)
+        face["emotion"] = get_emotion(net, img, coordinate)
         faces.append(face)
 
     return faces
 
-def add_overlays(frame, faces, frame_rate):
+def add_overlays(frame, faces, frame_rate, EMOTIONS, feelings_faces):
     if faces is not None:
         for face in faces:
             face_bb = face["bounding_box"]
@@ -54,9 +59,16 @@ def add_overlays(frame, faces, frame_rate):
                           (0, 255, 0), 2)
             if face["emotion"] is not None:
                 # print("Person: ", face.name)
-                cv2.putText(frame, face["emotion"], (face_bb[0], face_bb[3]),
+                cv2.putText(frame, EMOTIONS[face["emotion"]], (face_bb[0], face_bb[3]),
                             cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0),
                             thickness=2, lineType=2)
+
+                emoji = feelings_faces[face["emotion"]]
+                # Ugly transparent fix
+                for c in range(0, 3):
+                    frame[face_bb[1]:face_bb[1]+120, face_bb[0]:face_bb[0]+120, c] = emoji[:,:,c] * (emoji[:, :, 3] // 255.0) +  frame[face_bb[1]:face_bb[1]+120, face_bb[0]:face_bb[0]+120, c] * (1.0 - emoji[:, :, 3] // 255.0)
+
+
 
     cv2.putText(frame, str(frame_rate) + " fps", (10, 30),
                 cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0),
@@ -64,6 +76,19 @@ def add_overlays(frame, faces, frame_rate):
 
 
 def main(args):
+
+    EMOTIONS = ['angry', 'disgusted', 'fearful', \
+            'happy', 'sad', 'surprised', 'neutral']
+
+    EMOTIONS_pt = ['raiva', 'desgosto', 'medo', \
+            'felicidade', 'tristeza', 'surpresa', 'neutralidade']
+
+
+    feelings_faces = []
+    for index, emotion in enumerate(EMOTIONS):
+        feelings_faces.append(cv2.imread('./emojis/' + emotion + '.png', -1))
+
+
     PATH_NET_INPUT = ""
 
     frame_interval = 5  # Number of frames after which to run face detection
@@ -100,7 +125,7 @@ def main(args):
                 start_time = time.time()
                 frame_count = 0
 
-        add_overlays(frame, faces, frame_rate)
+        add_overlays(frame, faces, frame_rate, EMOTIONS_pt, feelings_faces)
 
         frame_count += 1
         cv2.imshow('Video', frame)
