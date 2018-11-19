@@ -24,22 +24,35 @@ def padding_bounding_box(bb, img_size, padding=32):
 
 
 def get_emotion(net, img, coordinate):
-
     img_cropped = img[coordinate[0]:coordinate[2], coordinate[3]:coordinate[1]]
-    # cv2.imshow("cropped", img_cropped)
-    # cv2.waitKey(1)
 
-    # img_cropped = cv2.resize(img_cropped, (80, 80))
-    # img_cropped = np.array(img_cropped)
-    # img_cropped = img_cropped.reshape(1, 80, 80, 3)
-    # predictions = net.predict([np.array(img_cropped)])
-    # index_emotion = np.argmax(predictions[0])
+    img_cropped = cv2.resize(img_cropped, (110, 110))
+    img_cropped = np.array(img_cropped)
+    img_cropped = img_cropped.reshape(1, 110, 110, 3)
+    predictions = net.predict([np.array(img_cropped)])
+    index_emotion = np.argmax(predictions[0])
 
-    return 6
+    return index_emotion
 
-def classify(net, img, faceDetector):
+def ajust_point_on_view(point, img_size):
+    if point + 120 > img_size:
+        return point - (point + 120 - img_size)
+
+    return point
+
+def get_coordinate_emoji(bb, img_size):
+    bounding_box = np.zeros(4, dtype=np.int32)
+
+    bounding_box[0] = ajust_point_on_view(bb[0], img_size[1])
+    bounding_box[1] = ajust_point_on_view(bb[1], img_size[0])
+    bounding_box[2] = bb[0] + 120
+    bounding_box[3] = bb[1] + 120
+
+    return bounding_box
+
+def classify(net, img, faceDetector, img_size):
     faces = []
-    img_size = np.asarray(img.shape)[0:2]
+
     coordinates = faceDetector.detectHogSVM(img)
 
     for coordinate in coordinates:
@@ -50,7 +63,7 @@ def classify(net, img, faceDetector):
 
     return faces
 
-def add_overlays(frame, faces, frame_rate, EMOTIONS, feelings_faces):
+def add_overlays(frame, faces, frame_rate, EMOTIONS, feelings_faces, img_size):
     if faces is not None:
         for face in faces:
             face_bb = face["bounding_box"]
@@ -64,9 +77,10 @@ def add_overlays(frame, faces, frame_rate, EMOTIONS, feelings_faces):
                             thickness=2, lineType=2)
 
                 emoji = feelings_faces[face["emotion"]]
+                emoji_bb = get_coordinate_emoji(face_bb, img_size)
                 # Ugly transparent fix
                 for c in range(0, 3):
-                    frame[face_bb[1]:face_bb[1]+120, face_bb[0]:face_bb[0]+120, c] = emoji[:,:,c] * (emoji[:, :, 3] // 255.0) +  frame[face_bb[1]:face_bb[1]+120, face_bb[0]:face_bb[0]+120, c] * (1.0 - emoji[:, :, 3] // 255.0)
+                    frame[emoji_bb[1]:emoji_bb[3], emoji_bb[0]:emoji_bb[2], c] = emoji[:,:,c] * (emoji[:, :, 3] // 255.0) +  frame[emoji_bb[1]:emoji_bb[3], emoji_bb[0]:emoji_bb[2], c] * (1.0 - emoji[:, :, 3] // 255.0)
 
 
 
@@ -89,7 +103,7 @@ def main(args):
         feelings_faces.append(cv2.imread('./emojis/' + emotion + '.png', -1))
 
 
-    PATH_NET_INPUT = ""
+    PATH_NET_INPUT = "model/vgg_19_weights_110+03_18_51+2018-11-1.hdf5"
 
     frame_interval = 5  # Number of frames after which to run face detection
     fps_display_interval = 5  # seconds
@@ -100,8 +114,7 @@ def main(args):
     video_capture = cv2.VideoCapture(capture)
     print("[+] LOADING: ")
 
-    # net = load_model(PATH_NET_INPUT)
-    net = None
+    net = load_model(PATH_NET_INPUT)
 
     faceDetector = FaceDetector()
     start_time = time.time()
@@ -113,10 +126,10 @@ def main(args):
 
         # Capture frame-by-frame
         ret, frame = video_capture.read()
+        img_size = np.asarray(frame.shape)[0:2]
 
         if (frame_count % frame_interval) == 0:
-            # faces = face_recognition.classify(frame)
-            faces = classify(net, frame, faceDetector)
+            faces = classify(net, frame, faceDetector, img_size)
 
             # Check our current fps
             end_time = time.time()
@@ -125,7 +138,7 @@ def main(args):
                 start_time = time.time()
                 frame_count = 0
 
-        add_overlays(frame, faces, frame_rate, EMOTIONS_pt, feelings_faces)
+        add_overlays(frame, faces, frame_rate, EMOTIONS_pt, feelings_faces, img_size)
 
         frame_count += 1
         cv2.imshow('Video', frame)
