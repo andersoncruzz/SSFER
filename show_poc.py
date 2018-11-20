@@ -109,7 +109,7 @@ def main(args):
     fps_display_interval = 5  # seconds
     frame_rate = 0
     frame_count = 0
-    capture = 0
+    capture = 1
     print("capture: ", capture)
     video_capture = cv2.VideoCapture(capture)
     print("[+] LOADING: ")
@@ -141,7 +141,10 @@ def main(args):
         add_overlays(frame, faces, frame_rate, EMOTIONS_pt, feelings_faces, img_size)
 
         frame_count += 1
-        cv2.imshow('Video', frame)
+        # cv2.imshow('Video', frame)
+        cv2.namedWindow("window", cv2.WND_PROP_FULLSCREEN)
+        cv2.setWindowProperty("window",cv2.WND_PROP_FULLSCREEN,cv2.WINDOW_GUI_EXPANDED)
+        cv2.imshow("window", frame)
 
     # When everything is done, release the capture
     video_capture.release()
