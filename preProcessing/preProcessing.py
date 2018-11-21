@@ -58,6 +58,32 @@ class PreProcessing:
 
         return x_train, y_train, x_test, y_test
 
+    def load_base_for_validation(self, path):
+        CIFE_TR_DATA = np.load(os.path.join(path, 'CIFE-data-tr.npy'))
+        CIFE_TS_DATA = np.load(os.path.join(path, 'CIFE-data-ts.npy'))
+        CK_DATA = np.load(os.path.join(path, 'ck+-data.npy'))
+        FER_DATA = np.load(os.path.join(path, 'fer_data.npy'))
+        JAFFE_DATA = np.load(os.path.join(path, 'JAFFE-data.npy'))
+        KDEF_DATA = np.load(os.path.join(path, 'KDEF-data.npy'))
+        NOVAEMOTIONS_DATA = np.load(os.path.join(path, 'novaemotions-data.npy'))
+        RAFD_DATA = np.load(os.path.join(path, 'RafD-data.npy'))
+
+        x = np.concatenate((CIFE_TR_DATA, CIFE_TS_DATA, CK_DATA, FER_DATA, JAFFE_DATA, KDEF_DATA, NOVAEMOTIONS_DATA, RAFD_DATA), axis=0)
+
+        CIFE_TR_DATA = np.load(os.path.join(path, 'CIFE-label-tr.npy'))
+        CIFE_TS_DATA = np.load(os.path.join(path, 'CIFE-label-ts.npy'))
+        CK_DATA = np.load(os.path.join(path, 'ck+-label.npy'))
+        FER_DATA = np.load(os.path.join(path, 'fer_labels.npy'))
+        JAFFE_DATA = np.load(os.path.join(path, 'JAFFE-label.npy'))
+        KDEF_DATA = np.load(os.path.join(path, 'KDEF-label.npy'))
+        NOVAEMOTIONS_DATA = np.load(os.path.join(path, 'novaemotions-label.npy'))
+        RAFD_DATA = np.load(os.path.join(path, 'RafD-label.npy'))
+
+        y = np.concatenate((CIFE_TR_DATA, CIFE_TS_DATA, CK_DATA, FER_DATA, JAFFE_DATA, KDEF_DATA, NOVAEMOTIONS_DATA, RAFD_DATA), axis=0)
+
+        return x, y
+
+
 
     def load_base(self, path):
         pwd = os.path.join(path, "images")

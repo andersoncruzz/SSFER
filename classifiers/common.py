@@ -46,7 +46,7 @@ class Common:
         file_weights = os.path.join(path_dir, "weights.{epoch:02d}-{val_loss:.2f}.hdf5")
         checkpoint = ModelCheckpoint(file_weights, monitor='val_loss', verbose=1, save_best_only=True, mode='auto')
         # checkpoint = ModelCheckpoint(filepath, monitor='val_loss', verbose=1, save_best_only=True, mode='min')
-        earlystopping = EarlyStopping(monitor='val_loss', min_delta=0, patience=20, verbose=1, mode='auto')
+        earlystopping = EarlyStopping(monitor='val_loss', min_delta=0, patience=5, verbose=1, mode='auto')
 
         callbacks_list = [checkpoint, earlystopping]
 

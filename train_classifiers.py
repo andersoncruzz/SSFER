@@ -46,7 +46,7 @@ OPTIMIZERS = ["Adadelta", "SGD", "Nadam", "RMSprop"]
 # OPTIMIZER = OPTIMIZERS[0]
 OPTIMIZER = OPTIMIZERS[args["optimizer"]]
 
-ARCHITECTURES = ["VGG16", "VGG19", "MobileNet", "MobileNetV2",
+ARCHITECTURES = ["VGG16", "VGG19", "MobileNet", "MobileNetV2", \
                 "ResNet50", "InceptionV3", "InceptionResNetV2"]
 # ARCHITECTURE = ARCHITECTURES[3]
 ARCHITECTURE = ARCHITECTURES[args["architecture"]]
