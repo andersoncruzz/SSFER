@@ -1,0 +1,62 @@
+How to install Single Shot Face Expression Recognition (SSFER) on Windows
+
+1) download and install Git:
+https://git-scm.com/download/win
+
+2) download and instal CMake:
+https://cmake.org/download/
+
+3) download and install Visual Studio 2017 version Comunity:
+https://visualstudio.microsoft.com/pt-br/downloads/
+
+4) open visual studio installer and install C++ package
+
+5) Restart Windows
+
+6) install the Python
+source: https://www.python.org/downloads/release/python-354/
+version: python 3.5.4 (Windows X86-64 executable installer)
+
+7) open CMD or Command Prompt via Windows menu
+
+8) upgrade your pip3:
+C:\> pip3 install --upgrade pip
+
+9) install the Tensorflow pip package dependencies:
+C:\> pip3 install six numpy wheel
+
+10) install Tensorflow:
+C:\> pip3 install --user --upgrade tensorflow-gpu==1.10
+
+11) verify the install:
+C:\> python -c "import tensorflow as tf; tf.enable_eager_execution(); print(tf.reduce_sum(tf.random_normal([1000, 1000])))"
+
+Expected output:
+tf.Tensor(random number, shape=(), dtype=float32)
+
+12) install Keras:
+C:\> pip3 install Keras==2.2.2
+
+13) install Opencv:
+C:\> pip3 install python-opencv
+
+14) install argparse:
+C:\> pip3 install argparse
+
+15) install face recognition:
+C:\> pip3 install face_recognition
+
+16) open GIT BASH via Windows menu
+
+17) clone repository SSFER from github via GIT BASH:
+$ git clone https://github.com/andersoncruzz/SSFER.git
+
+18) close GIT BASH
+
+19) Next Steps in CMD or Command Prompt
+
+20) go to SSFER repository:
+C:\> cd SSFER
+
+21) run show_poc file:
+C:\> python show_poc.py
