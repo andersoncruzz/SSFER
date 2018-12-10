@@ -23,6 +23,10 @@ import os
 #TODO: To add MTCNN DETECTOR NEURAL NETWORK
 
 class FaceDetector:
+    def __init__(self, mtcnn=False):
+        if mtcnn == True:
+            from mtcnn.mtcnn import MTCNN
+            self.mtcnn = MTCNN()
 
     def detectViolaJones(self, image, SF=1.3, casc_path=os.path.join(os.path.dirname(os.path.realpath(__file__)), "haarcascade_file.xml")):
         #TODO: Verify params ViolaJones, IS REALLY VIOLA JONES ALGORITHM?
@@ -56,3 +60,15 @@ class FaceDetector:
             return []
 
         return face_recognition.face_locations(img, number_of_times_to_upsample=upsample, model="cnn")
+
+    def detectMTCNN(self, img):
+        result = self.mtcnn.detect_faces(img)
+
+        if result == []:
+            return []
+
+        if result[0]['confidence'] < 0.0:
+            return []
+
+        bounding_box = result[0]['box']
+        return bounding_box
