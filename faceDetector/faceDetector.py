@@ -66,9 +66,13 @@ class FaceDetector:
 
         if result == []:
             return []
+        bbs = []
+        for rt in result:
+            if rt["confidence"] < 0.9:
+                continue
 
-        if result[0]['confidence'] < 0.0:
-            return []
+            bb = rt["box"]
+            #bb[1], bb[2], bb[3], bb[0]
+            bbs.append((bb[1],  bb[2] + bb[0], bb[3] + bb[1], bb[0]))
 
-        bounding_box = result[0]['box']
-        return bounding_box
+        return bbs

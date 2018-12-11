@@ -14,10 +14,6 @@ preProcessing = PreProcessing()
 
 CLASSES = ['angry', 'disgusted', 'fearful', 'happy', 'sad', 'surprised', 'neutral']
 
-PATH_DATABASE = "input_data_emotions"
-INPUT_DATASET = "output_60"
-PATH_DATABASE_INPUT = os.path.join(PATH_DATABASE, INPUT_DATASET)
-
 def head(line):
     str_line = "\t"
     for item in line:
@@ -38,7 +34,7 @@ def confusion_matrix(y_true, y_pred, classes):
     txt = head(classes)
 
     for i in enumerate(rt):
-        txt += line(i[1], i[0])
+        txt += line(i[1], classes[i[0]])
     return txt
 
 def make_dirs(path):
@@ -48,9 +44,16 @@ def make_dirs(path):
 
 #models/mybase_preload_0_9_300_ep_vgg16/weights.01-0.02.hdf5
 PATH_MODELS = "models_experiment"
+PATH_DATABASE = "input_data_emotions"
 
 for PATH_WEIGHTS in os.listdir(PATH_MODELS):
     # PATH_WEIGHTS = "MobileNet+60+23_05_40+2018-11-01"
+    print("PATH_WEIGHTS: ", PATH_WEIGHTS)
+    SIZE = PATH_WEIGHTS.split("+")[1]
+    INPUT_DATASET = "output_" + SIZE
+    PATH_DATABASE_INPUT = os.path.join(PATH_DATABASE, INPUT_DATASET)
+
+
     for MODEL in os.listdir(os.path.join(PATH_MODELS, PATH_WEIGHTS)):
         if MODEL.find("hdf5") == -1:
             continue
@@ -84,7 +87,7 @@ for PATH_WEIGHTS in os.listdir(PATH_MODELS):
                 # img = img.astype('float32')
                 # img /= 255
 
-                img = img.reshape(1, 60, 60, 3)
+                img = img.reshape(1, int(SIZE), int(SIZE), 3)
 
                 result = net.predict([img])
                 clazz_predicted = np.argmax(result)
