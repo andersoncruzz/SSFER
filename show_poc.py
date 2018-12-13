@@ -109,7 +109,7 @@ def main(args):
     fps_display_interval = 5  # seconds
     frame_rate = 0
     frame_count = 0
-    capture = 1
+    capture = 0
     print("capture: ", capture)
     video_capture = cv2.VideoCapture(capture)
     print("[+] LOADING: ")

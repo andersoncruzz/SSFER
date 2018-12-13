@@ -21,3 +21,4 @@ for index, row in data.iterrows():
 
 np.save("databases/VOC2007-data.npy", images)
 np.save("databases/VOC2007-labels.npy", labels)
+
