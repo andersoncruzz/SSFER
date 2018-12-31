@@ -1,0 +1,8 @@
+A fosfatidilserina é um fosfolipídio aniônico cuja interação com cálcio livre regula processos de transdução celular e vem sendo estudada no desenvolvimento de biossensores nanométricos. A figura representa a estrutura da fosfatidilserina:
+
+Com base nas informações do texto, a natureza da interação da fosfatidilserina com o cálcio livre é do tipo Dado: número atômico do elemento cálcio: 20
+# iônica somente com o grupo aniônico fosfato, já que o cálcio livre é um cátion monovalente. 
+# iônica com o cátion amônio, porque o cálcio livre é representado como um ânion monovalente. 
+# iônica com os grupos aniônicos fosfato e carboxila, porque o cálcio em sua forma livre é um cátion divalente. 
+# covalente com qualquer dos grupos não carregados da fosfatidilserina, uma vez que estes podem doar elétrons ao cálcio livre para formar a ligação. 
+# covalente com qualquer grupo catiônico da fosfatidilserina, visto que o cálcio na sua forma livre poderá compartilhar seus elétrons com tais grupos. 

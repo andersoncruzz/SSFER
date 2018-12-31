@@ -1,0 +1,8 @@
+Um agricultor, buscando o aumento da produtividade de sua lavoura, utilizou o adubo NPK (nitrogênio, fósforo e potássio) com alto teor de sais minerais. A irrigação dessa lavoura é feita por canais que são desviados de um rio próximo dela. Após algum tempo, notou-se uma grande mortandade de peixes no rio que abastece os canais, devido à contaminação das águas pelo excesso de adubo usado pelo agricultor.
+Que processo biológico pode ter sido provocado na água do rio pelo uso do adubo NPK?
+# Lixiviação, processo em que ocorre a lavagem do solo, que acaba disponibilizando os nutrientes para a água do rio. 
+# Acidificação, processo em que os sais, ao se dissolverem na água do rio, formam ácidos. 
+# Eutrofização, ocasionada pelo aumento de fósforo e nitrogênio dissolvidos na água, que resulta na proliferação do fitoplâncton. 
+# Aquecimento, decorrente do aumento de sais dissolvidos na água do rio, que eleva sua temperatura. 
+# Denitrificação, processo em que o excesso de nitrogênio que chega ao rio é disponibilizado para a atmosfera, prejudicando o desenvolvimento dos peixes. 
+

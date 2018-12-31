@@ -1,0 +1,9 @@
+Com a frequente adulteração de combustíveis, além de fiscalização, há necessidade de prover meios para que o consumidor verifique a qualidade do combustível. Para isso, nas bombas de combustível existe um densímetro, semelhante ao ilustrado na figura. Um tubo de vidro fechado fica imerso no combustível, devido ao peso das bolinhas de chumbo colocadas no seu interior. Uma coluna vertical central marca a altura de referência, que deve ficar abaixo ou no nível do combustível para indicar que sua densidade está adequada. Como o volume do líquido varia com a temperatura mais que o do vidro, a coluna vertical é preenchida com mercúrio para compensar variações de temperatura.
+
+De acordo com o texto, a coluna vertical de mercúrio, quando aquecida,
+# indica a variação da densidade do combustível com a temperatura. 
+# mostra a diferença de altura da coluna a ser corrigida. 
+# mede a temperatura ambiente no momento do abastecimento. 
+# regula a temperatura do densímetro de acordo com a do ambiente. 
+# corrige a altura de referência de acordo com a densidade do líquido. 
+

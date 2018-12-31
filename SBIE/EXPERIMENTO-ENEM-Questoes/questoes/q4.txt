@@ -1,0 +1,9 @@
+Durante a Segunda Guerra Mundial, para decifrarem as mensagens secretas, foi utilizada a técnica de decomposição em fatores primos. Um número N é dado pela expressão 2x 5y 7z , na qual x, y e z são números inteiros não negativos. Sabe-se que N é múltiplo de 10 e não é múltiplo de 7.
+O número de divisores de N, diferentes de N, é
+FALTAIMAGEM
+#Questão A 
+#Questão B 
+#Questão C 
+#Questão D 
+#Questão E 
+

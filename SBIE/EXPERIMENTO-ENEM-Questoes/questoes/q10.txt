@@ -1,0 +1,7 @@
+faltaimagem
+# Ácido benzoico e ácido etanoico. 
+# Ácido benzoico e ácido propanoico. 
+# Ácido etanoico e ácido 2-feniletanoico. 
+# Ácido 2-feniletanoico e ácido metanoico. 
+# Ácido 2-feniletanoico e ácido propanoico.
+

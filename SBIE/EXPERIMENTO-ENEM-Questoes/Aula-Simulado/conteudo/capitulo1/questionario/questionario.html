@@ -1,0 +1,1648 @@
+<!DOCTYPE html>  
+<html>
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="css/bootstrap.min.css">
+   <script src="js/jquery.min.js"></script>
+   <script src="js/bootstrap.min.js"></script>
+   <script type="text/javascript" src="../../../DataCollector.js"></script>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <title>Avaliando os Conhecimentos Adquiridos</title>
+</head>
+
+<body class="clickbody">
+   <div style="display: inline-block;">
+
+      <!-- menu lateral que deve listar as questões -->
+      <div class="container" id="menu">
+         <h3>Exercício</h3>
+         <div>
+
+            <a href="#" onclick="carregarList(multioption.question[0])" class="Q:1:H:1-1 list-group-item">Questão 1</a>
+
+            <a href="#" onclick="carregarList(multioption.question[1])" class="Q:2:H:1-1 list-group-item">Questão 2</a>
+
+            <a href="#" onclick="carregarList(multioption.question[2])" class="Q:3:H:1-1 list-group-item">Questão 3</a>
+
+            <a href="#" onclick="carregarList(multioption.question[3])" class="Q:4:H:1-1 list-group-item">Questão 4</a>
+
+            <a href="#" onclick="carregarList(multioption.question[4])" class="Q:5:H:1-1 list-group-item">Questão 5</a>
+
+            <a href="#" onclick="carregarList(multioption.question[5])" class="Q:6:H:1-1 list-group-item">Questão 6</a>
+
+            <a href="#" onclick="carregarList(multioption.question[6])" class="Q:7:H:1-1 list-group-item">Questão 7</a>
+
+            <a href="#" onclick="carregarList(multioption.question[7])" class="Q:8:H:1-2 list-group-item">Questão 8</a>
+
+            <a href="#" onclick="carregarList(multioption.question[8])" class="Q:9:H:1-2 list-group-item">Questão 9</a>
+
+            <a href="#" onclick="carregarList(multioption.question[9])" class="Q:10:H:1-2 list-group-item">Questão 10</a>
+
+         </div>
+      </div>
+      <div class="container" id="containerQuestion">
+      </div>
+      <div class="container" id="menuTroca1">
+         <h3>Opções</h3>
+            <button type="button" id="btnTroca" class="troca-Q1 btn btn-info btn-lg" onclick="carregar(multioption.id[2])">Trocar questão</button>
+      </div>
+      <div class="container" id="menuTroca2">
+         <h3>Opções</h3>
+            <button type="button" id="btnTroca" class="troca-Q2 btn btn-info btn-lg" onclick="carregar(multioption.id[2])">Trocar questão</button>
+      </div>
+      <div class="container" id="menuTroca3">
+         <h3>Opções</h3>
+            <button type="button" id="btnTroca" class="troca-Q3 btn btn-info btn-lg" onclick="carregar(multioption.id[2])">Trocar questão</button>
+      </div>
+      <div class="container" id="menuTroca4">
+         <h3>Opções</h3>
+            <button type="button" id="btnTroca" class="troca-Q4 btn btn-info btn-lg" onclick="carregar(multioption.id[2])">Trocar questão</button>
+      </div>
+      <div class="container" id="menuTroca5">
+         <h3>Opções</h3>
+            <button type="button" id="btnTroca" class="troca-Q5 btn btn-info btn-lg" onclick="carregar(multioption.id[2])">Trocar questão</button>
+      </div>
+      <div class="container" id="menuTroca6">
+         <h3>Opções</h3>
+            <button type="button" id="btnTroca" class="troca-Q6 btn btn-info btn-lg" onclick="carregar(multioption.id[2])">Trocar questão</button>
+      </div>
+      <div class="container" id="menuTroca7">
+         <h3>Opções</h3>
+            <button type="button" id="btnTroca" class="troca-Q7 btn btn-info btn-lg" onclick="carregar(multioption.id[2])">Trocar questão</button>
+      </div>
+      <div class="container" id="menuTroca8">
+         <h3>Opções</h3>
+            <button type="button" id="btnTroca" class="troca-Q8 btn btn-info btn-lg" onclick="carregar(multioption.id[2])">Trocar questão</button>
+      </div>
+      <div class="container" id="menuTroca9">
+         <h3>Opções</h3>
+            <button type="button" id="btnTroca" class="troca-Q9 btn btn-info btn-lg" onclick="carregar(multioption.id[2])">Trocar questão</button>
+      </div>
+      <div class="container" id="menuTroca10">
+         <h3>Opções</h3>
+            <button type="button" id="btnTroca" class="troca-Q10 btn btn-info btn-lg" onclick="carregar(multioption.id[2])">Trocar questão</button>
+      </div>
+   </div>
+	<!-- A partir daqui fica escondido -->
+ 	<!-- Inicio da div de uma questão-->
+   <div class="question" id="Q1-hard">
+      <h1 class="Q:1:H:1-1">Questão 1 - Principal</h1>
+      <p class="Q:1:H:1-1">O analista de tecnologia da informação deve especificar os cabos de pares trançados para interligar as estações de trabalho de uma sala do Tribunal à Switch localizada no mesmo andar da sala onde estão as estações de trabalho. Adotando a Norma TIA/EIA 568-B, e a codificação de terminação T568A, os pinos de números 1 e 2 do conector RJ-45 devem receber, respectivamente, os fios de cores.<br></p>
+      <div class="alternativas">
+
+         <div class="radio">
+            <label><input class="Q:1:H:1-1:A" id="Q:1:H:1-1:A" type="radio" name="1" value="A">A) Verde e Branco/Verde</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:1:H:1-1:B" id="Q:1:H:1-1:B" type="radio" name="1" value="B">B) Branco/Laranja e Laranja</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:1:H:1-1:C" id="Q:1:H:1-1:C" type="radio" name="1" value="C">C) Azul e Branco/Azul</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:1:H:1-1:D" id="Q:1:H:1-1:D" type="radio" name="1" value="D">D) Branco/Verde e Verde</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:1:H:1-1:E" id="Q:1:H:1-1:E" type="radio" name="1" value="E">E) Laranja e Verde</label>
+         </div>
+      </div>
+      <!--<button type="button" id="A1-hard" class="Q:1:H:1-1 btn btn-info btn-lg">Responder</button> -->
+      <button type="button" id="D1-hard" class="D:1:H:1-1 btn btn-info btn-lg" data-toggle="modal" data-target="#tip-Q1-hard">Sugestão</button>
+      <button type="button" id="C1-hard" class="C:1:H:1-1 btn btn-info btn-lg" data-toggle="modal" data-target="#my-contentQ1-hard">Voltar ao conteúdo</button>	
+   </div>
+   <!-- Fim da div de uma questão-->
+   <div id="tip-Q1-hard" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+         <!-- Modal content-->
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="D:1:H:1-1 close" data-dismiss="modal">&times;</button>
+               <h4 class="modal-title">Sugestão para Questão 1</h4>
+            </div>
+            <div class="modal-body">
+               <p> Há dois tipos de codificação de terminação para crimpagem de cabos de rede (T586A e T586B). </p>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="D:1:H:1-1 btn btn-default " data-dismiss="modal">Fechar</button>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- modal que fica escondido para trocar questão -->
+   <div class="container">
+   </div>
+   <!-- para voltar ao conteúdo -->
+   <div id="my-contentQ1-hard" class="modal fade" role="dialog">
+  	<div class="modal-dialog modal-lg">
+
+           <!-- Modal content-->
+           <div class="modal-content">
+              <div class="modal-header">
+                 <button type="button" class="C:1:H:1-1 close" data-dismiss="modal">&times;</button>
+                 <h4 class="modal-title">1-1</h4>
+              </div>
+              <div class="modal-body">
+                 <iframe id="content-frame" src="../c1-1.html"></iframe>
+              </div>
+              <div class="modal-footer">
+                 <button type="button" class="C:1:H:1-1 close" data-dismiss="modal">&times;</button>
+              </div>
+           </div>
+        </div>
+   </div>
+ 	<!-- Inicio da div de uma questão-->
+   <div class="question" id="Q1-easy">
+      <h1 class="Q:1:E:1-1">Questão 1 - Alternativa</h1>
+      <p class="Q:1:E:1-1">Analise a figura e as assertivas abaixo.<br>
+      <img src="images/q1.png" /><br><br>
+I. Trata-se da crimpagem padrão EIA/TIA 586A.<br>
+II. A norma pode ser aplicada nos cabos Categoria 5, 5e e 6.<br>
+III. Durante a crimpagem, a posição do clipe é irrelevante.<br>
+É correto o que se afirma em:<br></p>
+      <div class="alternativas">
+
+         <div class="radio">
+            <label><input class="Q:1:E:1-1:A" id="Q:1:E:1-1:A" type="radio" name="1" value="A">A) I, apenas</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:1:E:1-1:B" id="Q:1:E:1-1:B" type="radio" name="1" value="B">B) II, apenas</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:1:E:1-1:C" id="Q:1:E:1-1:C" type="radio" name="1" value="C">C) III, apenas</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:1:E:1-1:D" id="Q:1:E:1-1:D" type="radio" name="1" value="D">D) I e III, apenas</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:1:E:1-1:E" id="Q:1:E:1-1:E" type="radio" name="1" value="E">E) II e III, apenas</label>
+         </div>
+      </div>
+      <!--<button type="button" id="A1-easy" class="Q:1:E:1-1 btn btn-info btn-lg">Responder</button> -->
+      <button type="button" id="A1-easy" class="R:1:E:1-1 btn btn-info btn-lg" onclick="QchangeHard('1')">Responder</button>
+      <button type="button" id="D1-easy" class="D:1:E:1-1 btn btn-info btn-lg" data-toggle="modal" data-target="#tip-Q1-easy">Sugestão</button>
+      <button type="button" id="C1-easy" class="C:1:E:1-1 btn btn-info btn-lg" data-toggle="modal" data-target="#my-contentQ1-easy">Voltar ao conteúdo</button>	
+   </div>
+   <!-- Fim da div de uma questão-->
+   <div id="tip-Q1-easy" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+         <!-- Modal content-->
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="D:1:E:1-1 close" data-dismiss="modal">&times;</button>
+               <h4 class="modal-title">Sugestão para Questão 1</h4>
+            </div>
+            <div class="modal-body">
+               <p>Os cabos CAT 5 são suficientes tanto para redes de 100 quanto de 1000 megabits, eles são os mais comuns e mais baratos, mas os cabos CAT 6 estão se popularizando e devem substituí-los ao longo dos próximos anos. As categorias dos cabos não tem relação com o padrão de crimpagem, podendo serem usados vários padrões para uma mesma categoria.</p>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="D:1:E:1-1 btn btn-default " data-dismiss="modal">Fechar</button>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- modal que fica escondido para trocar questão -->
+   <div class="container">
+   </div>
+   <!-- para voltar ao conteúdo -->
+   <div id="my-contentQ1-easy" class="modal fade" role="dialog">
+  	<div class="modal-dialog modal-lg">
+
+           <!-- Modal content-->
+           <div class="modal-content">
+              <div class="modal-header">
+                 <button type="button" class="C:1:E:1-1 close" data-dismiss="modal">&times;</button>
+                 <h4 class="modal-title">1-1</h4>
+              </div>
+              <div class="modal-body">
+                 <iframe id="content-frame" src="../c1-1.html"></iframe>
+              </div>
+              <div class="modal-footer">
+                 <button type="button" class="C:1:E:1-1 close" data-dismiss="modal">&times;</button>
+              </div>
+           </div>
+        </div>
+   </div>
+ 	<!-- Inicio da div de uma questão-->
+   <div class="question" id="Q2-hard">
+      <h1 class="Q:2:H:1-1">Questão 2 - Principal</h1>
+      <p class="Q:2:H:1-1">Observe a figura a seguir, que apresenta um conector RJ-45 e sua respectiva pinagem numerada de 1 a 8.<br>
+     <img src="images/q2.png" /><br><br>
+Seguindo a numeração ilustrada na figura, qual é a sequência de cores desses pinos em um cabo UTP CAT5e, que utiliza o padrão de cabeamento T568B?<br><br></p>
+      <div class="alternativas">
+
+         <div class="radio">
+            <label><input class="Q:2:H:1-1:A" id="Q:2:H:1-1:A" type="radio" name="1" value="A">A) branco/laranja, laranja, branco/verde, azul, branco/azul, verde, branco/marrom, marrom.</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:2:H:1-1:B" id="Q:2:H:1-1:B" type="radio" name="1" value="B">B) branco/verde, verde, branco/laranja, azul, branco/azul, laranja, branco/marrom, marrom.</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:2:H:1-1:C" id="Q:2:H:1-1:C" type="radio" name="1" value="C">C) branco/azul, azul, branco/verde, laranja, branco/laranja, verde, branco/marrom, marrom.</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:2:H:1-1:D" id="Q:2:H:1-1:D" type="radio" name="1" value="D">D) branco/laranja, azul, branco/azul, laranja, branco/azul, verde, branco/marrom, marrom.</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:2:H:1-1:E" id="Q:2:H:1-1:E" type="radio" name="1" value="E">E) branco/laranja, verde, branco/azul, marrom, branco/azul, azul, branco/marrom, laranja.</label>
+         </div>
+      </div>
+      <!--<button type="button" id="A2-hard" class="Q:2:H:1-1 btn btn-info btn-lg">Responder</button> -->
+      <button type="button" id="D2-hard" class="D:2:H:1-1 btn btn-info btn-lg" data-toggle="modal" data-target="#tip-Q2-hard">Sugestão</button>
+      <button type="button" id="C2-hard" class="C:2:H:1-1 btn btn-info btn-lg" data-toggle="modal" data-target="#my-contentQ2-hard">Voltar ao conteúdo</button>	
+   </div>
+   <!-- Fim da div de uma questão-->
+   <div id="tip-Q2-hard" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+         <!-- Modal content-->
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="D:2:H:1-1 close" data-dismiss="modal">&times;</button>
+               <h4 class="modal-title">Sugestão para Questão 2</h4>
+            </div>
+            <div class="modal-body">
+               <p>Há dois tipos de codificação de terminação para crimpagem de cabos de rede (T586A e T586B). </p>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="D:2:H:1-1 btn btn-default " data-dismiss="modal">Fechar</button>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- modal que fica escondido para trocar questão -->
+   <div class="container">
+   </div>
+   <!-- para voltar ao conteúdo -->
+   <div id="my-contentQ2-hard" class="modal fade" role="dialog">
+  	<div class="modal-dialog modal-lg">
+
+           <!-- Modal content-->
+           <div class="modal-content">
+              <div class="modal-header">
+                 <button type="button" class="C:2:H:1-1 close" data-dismiss="modal">&times;</button>
+                 <h4 class="modal-title">1-1</h4>
+              </div>
+              <div class="modal-body">
+                 <iframe id="content-frame" src="../c1-1.html"></iframe>
+              </div>
+              <div class="modal-footer">
+                 <button type="button" class="C:2:H:1-1 close" data-dismiss="modal">&times;</button>
+              </div>
+           </div>
+        </div>
+   </div>
+ 	<!-- Inicio da div de uma questão-->
+   <div class="question" id="Q2-easy">
+      <h1 class="Q:2:E:1-1">Questão 2 - Alternativa</h1>
+      <p class="Q:2:E:1-1">A utilização de cabeamento estruturado segue normas, tal como ANSI/EIA/TIA-568 para a padronização de conectores, cabos, entre outras coisas. Qual alternativa está correta sobre o pino e a cor do fio no padrão T568B?<br></p>
+      <div class="alternativas">
+
+         <div class="radio">
+            <label><input class="Q:2:E:1-1:A" id="Q:2:E:1-1:A" type="radio" name="1" value="A">A) 3 - Verde.</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:2:E:1-1:B" id="Q:2:E:1-1:B" type="radio" name="1" value="B">B) 5 - Azul.</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:2:E:1-1:C" id="Q:2:E:1-1:C" type="radio" name="1" value="C">C) 2 - Branco/Verde.</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:2:E:1-1:D" id="Q:2:E:1-1:D" type="radio" name="1" value="D">D) 8 - Laranja.</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:2:E:1-1:E" id="Q:2:E:1-1:E" type="radio" name="1" value="E">E) 1 - Branco/Laranja.</label>
+         </div>
+      </div>
+      <!--<button type="button" id="A2-easy" class="Q:2:E:1-1 btn btn-info btn-lg">Responder</button> -->
+            <button type="button" id="A2-easy" class="R:2:E:1-1 btn btn-info btn-lg" onclick="QchangeHard('2')">Responder</button>      
+      <button type="button" id="D2-easy" class="D:2:E:1-1 btn btn-info btn-lg" data-toggle="modal" data-target="#tip-Q2-easy">Sugestão</button>
+      <button type="button" id="C2-easy" class="C:2:E:1-1 btn btn-info btn-lg" data-toggle="modal" data-target="#my-contentQ2-easy">Voltar ao conteúdo</button>	
+   </div>
+   <!-- Fim da div de uma questão-->
+   <div id="tip-Q2-easy" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+         <!-- Modal content-->
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="D:2:E:1-1 close" data-dismiss="modal">&times;</button>
+               <h4 class="modal-title">Sugestão para Questão 2</h4>
+            </div>
+            <div class="modal-body">
+               <p>Há dois tipos de codificação de terminação para crimpagem de cabos de rede (T586A e T586B).</p>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="D:2:E:1-1 btn btn-default " data-dismiss="modal">Fechar</button>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- modal que fica escondido para trocar questão -->
+   <div class="container">
+   </div>
+   <!-- para voltar ao conteúdo -->
+   <div id="my-contentQ2-easy" class="modal fade" role="dialog">
+  	<div class="modal-dialog modal-lg">
+
+           <!-- Modal content-->
+           <div class="modal-content">
+              <div class="modal-header">
+                 <button type="button" class="C:2:E:1-1 close" data-dismiss="modal">&times;</button>
+                 <h4 class="modal-title">1-1</h4>
+              </div>
+              <div class="modal-body">
+                 <iframe id="content-frame" src="../c1-1.html"></iframe>
+              </div>
+              <div class="modal-footer">
+                 <button type="button" class="C:2:E:1-1 close" data-dismiss="modal">&times;</button>
+              </div>
+           </div>
+        </div>
+   </div>
+ 	<!-- Inicio da div de uma questão-->
+   <div class="question" id="Q3-hard">
+      <h1 class="Q:3:H:1-1">Questão 3 - Principal</h1>
+      <p class="Q:3:H:1-1">NÃO é uma característica dos cabos ópticos do tipo monomodo:<br></p>
+      <div class="alternativas">
+
+         <div class="radio">
+            <label><input class="Q:3:H:1-1:A" id="Q:3:H:1-1:A" type="radio" name="1" value="A">A) Dimensões gerais menores que outros tipos de fibra.</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:3:H:1-1:B" id="Q:3:H:1-1:B" type="radio" name="1" value="B">B) Tem menor dispersão e por isso tem uma banda passante maior que outros tipos de fibra.</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:3:H:1-1:C" id="Q:3:H:1-1:C" type="radio" name="1" value="C">C) Geralmente o laser é usado como fonte de geração de sinal.</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:3:H:1-1:D" id="Q:3:H:1-1:D" type="radio" name="1" value="D">D) Geralmente usado para curtas distâncias, em função do seu preço e porque apresenta maior atenuação de sinal a longas distâncias.</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:3:H:1-1:E" id="Q:3:H:1-1:E" type="radio" name="1" value="E">E) Geralmente usado para longas distâncias porque apresenta menor distorção de sinal</label>
+         </div>
+      </div>
+      <!--<button type="button" id="A3-hard" class="Q:3:H:1-1 btn btn-info btn-lg">Responder</button> -->
+      <button type="button" id="D3-hard" class="D:3:H:1-1 btn btn-info btn-lg" data-toggle="modal" data-target="#tip-Q3-hard">Sugestão</button>
+      <button type="button" id="C3-hard" class="C:3:H:1-1 btn btn-info btn-lg" data-toggle="modal" data-target="#my-contentQ3-hard">Voltar ao conteúdo</button>	
+   </div>
+   <!-- Fim da div de uma questão-->
+   <div id="tip-Q3-hard" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+         <!-- Modal content-->
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="D:3:H:1-1 close" data-dismiss="modal">&times;</button>
+               <h4 class="modal-title">Sugestão para Questão 3</h4>
+            </div>
+            <div class="modal-body">
+               <p>Tem um diâmetro menor do que as a fibras multimodo, utiliza substâncias de menor densidade o que faz com que o feixe viaje praticamente na horizontal e assim apresente mínima distorção, além de utilizar um laser com alto foco.</p>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="D:3:H:1-1 btn btn-default " data-dismiss="modal">Fechar</button>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- modal que fica escondido para trocar questão -->
+   <div class="container">
+   </div>
+   <!-- para voltar ao conteúdo -->
+   <div id="my-contentQ3-hard" class="modal fade" role="dialog">
+  	<div class="modal-dialog modal-lg">
+
+           <!-- Modal content-->
+           <div class="modal-content">
+              <div class="modal-header">
+                 <button type="button" class="C:3:H:1-1 close" data-dismiss="modal">&times;</button>
+                 <h4 class="modal-title">1-1</h4>
+              </div>
+              <div class="modal-body">
+                 <iframe id="content-frame" src="../c1-1.html"></iframe>
+              </div>
+              <div class="modal-footer">
+                 <button type="button" class="C:3:H:1-1 close" data-dismiss="modal">&times;</button>
+              </div>
+           </div>
+        </div>
+   </div>
+ 	<!-- Inicio da div de uma questão-->
+   <div class="question" id="Q3-easy">
+      <h1 class="Q:3:E:1-1">Questão 3 - Alternativa</h1>
+      <p class="Q:3:E:1-1">Dado o crescimento da empresa X, foi necessário alugar outro prédio, distante 7 km do primeiro que ocupava. Para realizar a interligação de rede entre os dois prédios, sem a utilização de equipamentos com protocolos proprietários, foi necessária a utilização de:<br></p>
+      <div class="alternativas">
+
+         <div class="radio">
+            <label><input class="Q:3:E:1-1:A" id="Q:3:E:1-1:A" type="radio" name="1" value="A">A) par trançado blindado</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:3:E:1-1:B" id="Q:3:E:1-1:B" type="radio" name="1" value="B">B) fibra ótica multimodo</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:3:E:1-1:C" id="Q:3:E:1-1:C" type="radio" name="1" value="C">C) fibra ótica monomodo</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:3:E:1-1:D" id="Q:3:E:1-1:D" type="radio" name="1" value="D">D) cabo caxial monomodo</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:3:E:1-1:E" id="Q:3:E:1-1:E" type="radio" name="1" value="E">E) fibra ótica de dupla camada</label>
+         </div>
+      </div>
+      <!--<button type="button" id="A3-easy" class="Q:3:E:1-1 btn btn-info btn-lg">Responder</button> -->
+      <button type="button" id="A3-easy" class="R:3:E:1-1 btn btn-info btn-lg" onclick="QchangeHard('3')">Responder</button>
+      <button type="button" id="D3-easy" class="D:3:E:1-1 btn btn-info btn-lg" data-toggle="modal" data-target="#tip-Q3-easy">Sugestão</button>
+      <button type="button" id="C3-easy" class="C:3:E:1-1 btn btn-info btn-lg" data-toggle="modal" data-target="#my-contentQ3-easy">Voltar ao conteúdo</button>	
+   </div>
+   <!-- Fim da div de uma questão-->
+   <div id="tip-Q3-easy" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+         <!-- Modal content-->
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="D:3:E:1-1 close" data-dismiss="modal">&times;</button>
+               <h4 class="modal-title">Sugestão para Questão 3</h4>
+            </div>
+            <div class="modal-body">
+               <p>Para distâncias muito longas, o melhor meio de transmissão é aquele no qual os feixes de luz podem ser combinados com a mínima distorção.</p>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="D:3:E:1-1 btn btn-default " data-dismiss="modal">Fechar</button>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- modal que fica escondido para trocar questão -->
+   <div class="container">
+   </div>
+   <!-- para voltar ao conteúdo -->
+   <div id="my-contentQ3-easy" class="modal fade" role="dialog">
+  	<div class="modal-dialog modal-lg">
+
+           <!-- Modal content-->
+           <div class="modal-content">
+              <div class="modal-header">
+                 <button type="button" class="C:3:E:1-1 close" data-dismiss="modal">&times;</button>
+                 <h4 class="modal-title">1-1</h4>
+              </div>
+              <div class="modal-body">
+                 <iframe id="content-frame" src="../c1-1.html"></iframe>
+              </div>
+              <div class="modal-footer">
+                 <button type="button" class="C:3:E:1-1 close" data-dismiss="modal">&times;</button>
+              </div>
+           </div>
+        </div>
+   </div>
+ 	<!-- Inicio da div de uma questão-->
+   <div class="question" id="Q4-hard">
+      <h1 class="Q:4:H:1-1">Questão 4 - Principal</h1>
+      <p class="Q:4:H:1-1">A interconexão entre as estações de uma rede local de computadores é feita através de um meio físico de transmissão. Com relação às tecnologias de cabeamento de rede, analise as afirmativas a seguir:<br>
+I. As fibras óticas são adequadas quando se deseja atingir grandes distâncias ou altas velocidades de transmissão, porém precisam ser isoladas para não sofrer interferências eletromagnéticas.<br>
+II. O cabo coaxial fino (Thin Ethernet - 10Base2) é bastante utilizado em redes locais por ser maleável, possuir boa imunidade a ruídos eletromagnéticos de baixa frequência e manter sua capacidade constante, sem repetidores, com até 300 metros de comprimento.<br>
+III. Par trançado com blindagem (STP - Shielded Twisted Pair) deve ser utilizado em ambientes com agressivos ruídos eletromagnéticos, pois estes possuem maior imunidade às interferências externas de origem eletromagnética ou de radiofrequência.<br>
+Está correto o que se afirma em:<br></p>
+      <div class="alternativas">
+
+         <div class="radio">
+            <label><input class="Q:4:H:1-1:A" id="Q:4:H:1-1:A" type="radio" name="1" value="A">A) Somente I</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:4:H:1-1:B" id="Q:4:H:1-1:B" type="radio" name="1" value="B">B) Somente II</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:4:H:1-1:C" id="Q:4:H:1-1:C" type="radio" name="1" value="C">C) Somente III</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:4:H:1-1:D" id="Q:4:H:1-1:D" type="radio" name="1" value="D">D) Somente II e III</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:4:H:1-1:E" id="Q:4:H:1-1:E" type="radio" name="1" value="E">E) I, II e III</label>
+         </div>
+      </div>
+      <!--<button type="button" id="A4-hard" class="Q:4:H:1-1 btn btn-info btn-lg">Responder</button> -->
+      <button type="button" id="D4-hard" class="D:4:H:1-1 btn btn-info btn-lg" data-toggle="modal" data-target="#tip-Q4-hard">Sugestão</button>
+      <button type="button" id="C4-hard" class="C:4:H:1-1 btn btn-info btn-lg" data-toggle="modal" data-target="#my-contentQ4-hard">Voltar ao conteúdo</button>	
+   </div>
+   <!-- Fim da div de uma questão-->
+   <div id="tip-Q4-hard" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+         <!-- Modal content-->
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="D:4:H:1-1 close" data-dismiss="modal">&times;</button>
+               <h4 class="modal-title">Sugestão para Questão 4</h4>
+            </div>
+            <div class="modal-body">
+               <p>Se utiliza corrente elétrica, tende a sofrer com a interferência eletromagnética, quanto mais blindado, melhor.</p>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="D:4:H:1-1 btn btn-default " data-dismiss="modal">Fechar</button>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- modal que fica escondido para trocar questão -->
+   <div class="container">
+   </div>
+   <!-- para voltar ao conteúdo -->
+   <div id="my-contentQ4-hard" class="modal fade" role="dialog">
+  	<div class="modal-dialog modal-lg">
+
+           <!-- Modal content-->
+           <div class="modal-content">
+              <div class="modal-header">
+                 <button type="button" class="C:4:H:1-1 close" data-dismiss="modal">&times;</button>
+                 <h4 class="modal-title">1-1</h4>
+              </div>
+              <div class="modal-body">
+                 <iframe id="content-frame" src="../c1-1.html"></iframe>
+              </div>
+              <div class="modal-footer">
+                 <button type="button" class="C:4:H:1-1 close" data-dismiss="modal">&times;</button>
+              </div>
+           </div>
+        </div>
+   </div>
+ 	<!-- Inicio da div de uma questão-->
+   <div class="question" id="Q4-easy">
+      <h1 class="Q:4:E:1-1">Questão 4 - Alternativa</h1>
+      <p class="Q:4:E:1-1">Assinale a alternativa que apresenta um cabo de rede.:<br></p>
+      <div class="alternativas">
+
+         <div class="radio">
+            <label><input class="Q:4:E:1-1:A" id="Q:4:E:1-1:A" type="radio" name="1" value="A">A) UTP</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:4:E:1-1:B" id="Q:4:E:1-1:B" type="radio" name="1" value="B">B) RG78</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:4:E:1-1:C" id="Q:4:E:1-1:C" type="radio" name="1" value="C">C) FTP-E</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:4:E:1-1:D" id="Q:4:E:1-1:D" type="radio" name="1" value="D">D) BNC</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:4:E:1-1:E" id="Q:4:E:1-1:E" type="radio" name="1" value="E">E) TCP</label>
+         </div>
+      </div>
+      <!--<button type="button" id="A4-easy" class="Q:4:E:1-1 btn btn-info btn-lg">Responder</button> -->
+      <button type="button" id="A4-easy" class="R:4:E:1-1 btn btn-info btn-lg" onclick="QchangeHard('4')">Responder</button>
+      <button type="button" id="D4-easy" class="D:4:E:1-1 btn btn-info btn-lg" data-toggle="modal" data-target="#tip-Q4-easy">Sugestão</button>
+      <button type="button" id="C4-easy" class="C:4:E:1-1 btn btn-info btn-lg" data-toggle="modal" data-target="#my-contentQ4-easy">Voltar ao conteúdo</button>	
+   </div>
+   <!-- Fim da div de uma questão-->
+   <div id="tip-Q4-easy" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+         <!-- Modal content-->
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="D:4:E:1-1 close" data-dismiss="modal">&times;</button>
+               <h4 class="modal-title">Sugestão para Questão 4</h4>
+            </div>
+            <div class="modal-body">
+               <p>É o cabo de par trançado mais comum e mais simples.</p>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="D:4:E:1-1 btn btn-default " data-dismiss="modal">Fechar</button>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- modal que fica escondido para trocar questão -->
+   <div class="container">
+   </div>
+   <!-- para voltar ao conteúdo -->
+   <div id="my-contentQ4-easy" class="modal fade" role="dialog">
+  	<div class="modal-dialog modal-lg">
+
+           <!-- Modal content-->
+           <div class="modal-content">
+              <div class="modal-header">
+                 <button type="button" class="C:4:E:1-1 close" data-dismiss="modal">&times;</button>
+                 <h4 class="modal-title">1-1</h4>
+              </div>
+              <div class="modal-body">
+                 <iframe id="content-frame" src="../c1-1.html"></iframe>
+              </div>
+              <div class="modal-footer">
+                 <button type="button" class="C:4:E:1-1 close" data-dismiss="modal">&times;</button>
+              </div>
+           </div>
+        </div>
+   </div>
+ 	<!-- Inicio da div de uma questão-->
+   <div class="question" id="Q5-hard">
+      <h1 class="Q:5:H:1-1">Questão 5 - Principal</h1>
+      <p class="Q:5:H:1-1">A respeito de meios de transmissão de sinais, assinale a opção correta.<br></p>
+      <div class="alternativas">
+
+         <div class="radio">
+            <label><input class="Q:5:H:1-1:A" id="Q:5:H:1-1:A" type="radio" name="1" value="A">A) A capacidade de transmissão de um cabo coaxial é superior a de uma fibra óptica multimodo de índice gradual</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:5:H:1-1:B" id="Q:5:H:1-1:B" type="radio" name="1" value="B">B) A fibra óptica permite somente a transmissão de sinais digitais, ao contrário do cabo de par trançado, que possibilita a transmissão de sinais analógicos e digitais</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:5:H:1-1:C" id="Q:5:H:1-1:C" type="radio" name="1" value="C">C) A fibra óptica multimodo tem maior capacidade de transmissão de informação que a fibra monomodo</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:5:H:1-1:D" id="Q:5:H:1-1:D" type="radio" name="1" value="D">D) Diferentemente do cabo coaxial, o cabo de fios condutores paralelos é imune a ruído externo</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:5:H:1-1:E" id="Q:5:H:1-1:E" type="radio" name="1" value="E">E) A estrutura formada por fios condutores entrelaçados em espiral em um cabo de par trançado permite a redução de ruídos</label>
+         </div>
+      </div>
+      <!--<button type="button" id="A5-hard" class="Q:5:H:1-1 btn btn-info btn-lg">Responder</button> -->
+      <button type="button" id="D5-hard" class="D:5:H:1-1 btn btn-info btn-lg" data-toggle="modal" data-target="#tip-Q5-hard">Sugestão</button>
+      <button type="button" id="C5-hard" class="C:5:H:1-1 btn btn-info btn-lg" data-toggle="modal" data-target="#my-contentQ5-hard">Voltar ao conteúdo</button>	
+   </div>
+   <!-- Fim da div de uma questão-->
+   <div id="tip-Q5-hard" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+         <!-- Modal content-->
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="D:5:H:1-1 close" data-dismiss="modal">&times;</button>
+               <h4 class="modal-title">Sugestão para Questão 5</h4>
+            </div>
+            <div class="modal-body">
+               <p>Se os cabos são paralelos, então, um é mais afetado do que o outro, o que causa uma diferença no nível do sinal transportado.</p>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="D:5:H:1-1 btn btn-default " data-dismiss="modal">Fechar</button>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- modal que fica escondido para trocar questão -->
+   <div class="container">
+   </div>
+   <!-- para voltar ao conteúdo -->
+   <div id="my-contentQ5-hard" class="modal fade" role="dialog">
+  	<div class="modal-dialog modal-lg">
+
+           <!-- Modal content-->
+           <div class="modal-content">
+              <div class="modal-header">
+                 <button type="button" class="C:5:H:1-1 close" data-dismiss="modal">&times;</button>
+                 <h4 class="modal-title">1-1</h4>
+              </div>
+              <div class="modal-body">
+                 <iframe id="content-frame" src="../c1-1.html"></iframe>
+              </div>
+              <div class="modal-footer">
+                 <button type="button" class="C:5:H:1-1 close" data-dismiss="modal">&times;</button>
+              </div>
+           </div>
+        </div>
+   </div>
+ 	<!-- Inicio da div de uma questão-->
+   <div class="question" id="Q5-easy">
+      <h1 class="Q:5:E:1-1">Questão 5 - Alternativa</h1>
+      <p class="Q:5:E:1-1">Os fios utilizados em redes de computadores são projetados de modo a minimizar a interferência eletromagnética que depende:<br></p>
+      <div class="alternativas">
+
+         <div class="radio">
+            <label><input class="Q:5:E:1-1:A" id="Q:5:E:1-1:A" type="radio" name="1" value="A">A) da posição dos fios</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:5:E:1-1:B" id="Q:5:E:1-1:B" type="radio" name="1" value="B">B) da quantidade de corrente gerada em cada fio</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:5:E:1-1:C" id="Q:5:E:1-1:C" type="radio" name="1" value="C">C) de posição dos fios e da umidade relativa do ar</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:5:E:1-1:D" id="Q:5:E:1-1:D" type="radio" name="1" value="D">D) de um fio ser mais grosso do que o outro</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:5:E:1-1:E" id="Q:5:E:1-1:E" type="radio" name="1" value="E">E) de quantos roteadores fazem parte da rede</label>
+         </div>
+      </div>
+      <!--<button type="button" id="A5-easy" class="Q:5:E:1-1 btn btn-info btn-lg">Responder</button> -->
+      <button type="button" id="A5-easy" class="R:5:E:1-1 btn btn-info btn-lg" onclick="QchangeHard('5')">Responder</button>
+      <button type="button" id="D5-easy" class="D:5:E:1-1 btn btn-info btn-lg" data-toggle="modal" data-target="#tip-Q5-easy">Sugestão</button>
+      <button type="button" id="C5-easy" class="C:5:E:1-1 btn btn-info btn-lg" data-toggle="modal" data-target="#my-contentQ5-easy">Voltar ao conteúdo</button>	
+   </div>
+   <!-- Fim da div de uma questão-->
+   <div id="tip-Q5-easy" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+         <!-- Modal content-->
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="D:5:E:1-1 close" data-dismiss="modal">&times;</button>
+               <h4 class="modal-title">Sugestão para Questão 5</h4>
+            </div>
+            <div class="modal-body">
+               <p>Cabos com fios em paralelo sofrem mais do que cabos com fios entrelaçados, devido ao campo eletromagnético originado em torno de cada fio.</p>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="D:5:E:1-1 btn btn-default " data-dismiss="modal">Fechar</button>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- modal que fica escondido para trocar questão -->
+   <div class="container">
+   </div>
+   <!-- para voltar ao conteúdo -->
+   <div id="my-contentQ5-easy" class="modal fade" role="dialog">
+  	<div class="modal-dialog modal-lg">
+
+           <!-- Modal content-->
+           <div class="modal-content">
+              <div class="modal-header">
+                 <button type="button" class="C:5:E:1-1 close" data-dismiss="modal">&times;</button>
+                 <h4 class="modal-title">1-1</h4>
+              </div>
+              <div class="modal-body">
+                 <iframe id="content-frame" src="../c1-1.html"></iframe>
+              </div>
+              <div class="modal-footer">
+                 <button type="button" class="C:5:E:1-1 close" data-dismiss="modal">&times;</button>
+              </div>
+           </div>
+        </div>
+   </div>
+ 	<!-- Inicio da div de uma questão-->
+   <div class="question" id="Q6-hard">
+      <h1 class="Q:6:H:1-1">Questão 6 - Principal</h1>
+      <p class="Q:6:H:1-1">No processo de crescimento de uma rede de dados de 100 Mbps dentro de um edifício, verificou-se a necessidade da criação de uma conexão a um outro prédio, distante 1,5km. Para manter igual velocidade, com total imunidade a interferências elétricas e eletromagnéticas, e com o menor custo possível, a indicação para o meio físico dessa conexão é o uso de:<br></p>
+      <div class="alternativas">
+
+         <div class="radio">
+            <label><input class="Q:6:H:1-1:A" id="Q:6:H:1-1:A" type="radio" name="1" value="A">A) Cabo coaxial</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:6:H:1-1:B" id="Q:6:H:1-1:B" type="radio" name="1" value="B">B) Cabo blindado de par trançado</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:6:H:1-1:C" id="Q:6:H:1-1:C" type="radio" name="1" value="C">C) Fibra ótica monomodo</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:6:H:1-1:D" id="Q:6:H:1-1:D" type="radio" name="1" value="D">D) Fibra ótica multimodo</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:6:H:1-1:E" id="Q:6:H:1-1:E" type="radio" name="1" value="E">E) Transmissores de rádio (wireless)</label>
+         </div>
+      </div>
+      <!--<button type="button" id="A6-hard" class="Q:6:H:1-1 btn btn-info btn-lg">Responder</button> -->
+      <button type="button" id="D6-hard" class="D:6:H:1-1 btn btn-info btn-lg" data-toggle="modal" data-target="#tip-Q6-hard">Sugestão</button>
+      <button type="button" id="C6-hard" class="C:6:H:1-1 btn btn-info btn-lg" data-toggle="modal" data-target="#my-contentQ6-hard">Voltar ao conteúdo</button>	
+   </div>
+   <!-- Fim da div de uma questão-->
+   <div id="tip-Q6-hard" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+         <!-- Modal content-->
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="D:6:H:1-1 close" data-dismiss="modal">&times;</button>
+               <h4 class="modal-title">Sugestão para Questão 6</h4>
+            </div>
+            <div class="modal-body">
+               <p>Quanto mais preciso, maior o custo.</p>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="D:6:H:1-1 btn btn-default " data-dismiss="modal">Fechar</button>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- modal que fica escondido para trocar questão -->
+   <div class="container">
+   </div>
+   <!-- para voltar ao conteúdo -->
+   <div id="my-contentQ6-hard" class="modal fade" role="dialog">
+  	<div class="modal-dialog modal-lg">
+
+           <!-- Modal content-->
+           <div class="modal-content">
+              <div class="modal-header">
+                 <button type="button" class="C:6:H:1-1 close" data-dismiss="modal">&times;</button>
+                 <h4 class="modal-title">1-1</h4>
+              </div>
+              <div class="modal-body">
+                 <iframe id="content-frame" src="../c1-1.html"></iframe>
+              </div>
+              <div class="modal-footer">
+                 <button type="button" class="C:6:H:1-1 close" data-dismiss="modal">&times;</button>
+              </div>
+           </div>
+        </div>
+   </div>
+ 	<!-- Inicio da div de uma questão-->
+   <div class="question" id="Q6-easy">
+      <h1 class="Q:6:E:1-1">Questão 6 - Alternativa</h1>
+      <p class="Q:6:E:1-1">Com objetivo de especificar o tipo de meio de transmissão para a instalação física da rede de computadores do TCE-RS um técnico, a partir de uma pesquisa no mercado sobre os meios de transmissão cabeados, identificou e comparou os meios de transmissão com fios de cobre e os meios com fibra óptica. Ele verificou que a fibra ótica possui a vantagem, sobre o fio de cobre, de:<br></p>
+      <div class="alternativas">
+
+         <div class="radio">
+            <label><input class="Q:6:E:1-1:A" id="Q:6:E:1-1:A" type="radio" name="1" value="A">A) Ser mais imune à interferência eletromagnética e alcançar maiores distâncias.</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:6:E:1-1:B" id="Q:6:E:1-1:B" type="radio" name="1" value="B">B) Alcançar maiores distâncias, dependendo do tipo de blindagem.</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:6:E:1-1:C" id="Q:6:E:1-1:C" type="radio" name="1" value="C">C) Permitir menores raios de curvatura.</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:6:E:1-1:D" id="Q:6:E:1-1:D" type="radio" name="1" value="D">D) Disponibilizar maior banda de transmissão.</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:6:E:1-1:E" id="Q:6:E:1-1:E" type="radio" name="1" value="E">E) Possuir maior peso por metro e ser imune à interferência eletromagnética.</label>
+         </div>
+      </div>
+      <!--<button type="button" id="A6-easy" class="Q:6:E:1-1 btn btn-info btn-lg">Responder</button> -->
+      <button type="button" id="A6-easy" class="R:6:E:1-1 btn btn-info btn-lg" onclick="QchangeHard('6')">Responder</button>
+      <button type="button" id="D6-easy" class="D:6:E:1-1 btn btn-info btn-lg" data-toggle="modal" data-target="#tip-Q6-easy">Sugestão</button>
+      <button type="button" id="C6-easy" class="C:6:E:1-1 btn btn-info btn-lg" data-toggle="modal" data-target="#my-contentQ6-easy">Voltar ao conteúdo</button>	
+   </div>
+   <!-- Fim da div de uma questão-->
+   <div id="tip-Q6-easy" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+         <!-- Modal content-->
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="D:6:E:1-1 close" data-dismiss="modal">&times;</button>
+               <h4 class="modal-title">Sugestão para Questão 6</h4>
+            </div>
+            <div class="modal-body">
+               <p>Cabos com fios em paralelo sofrem mais do que cabos com fios entrelaçados, devido ao campo eletromagnético originado em torno de cada fio.</p>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="D:6:E:1-1 btn btn-default " data-dismiss="modal">Fechar</button>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- modal que fica escondido para trocar questão -->
+   <div class="container">
+   </div>
+   <!-- para voltar ao conteúdo -->
+   <div id="my-contentQ6-easy" class="modal fade" role="dialog">
+  	<div class="modal-dialog modal-lg">
+
+           <!-- Modal content-->
+           <div class="modal-content">
+              <div class="modal-header">
+                 <button type="button" class="C:6:E:1-1 close" data-dismiss="modal">&times;</button>
+                 <h4 class="modal-title">1-1</h4>
+              </div>
+              <div class="modal-body">
+                 <iframe id="content-frame" src="../c1-1.html"></iframe>
+              </div>
+              <div class="modal-footer">
+                 <button type="button" class="C:6:E:1-1 close" data-dismiss="modal">&times;</button>
+              </div>
+           </div>
+        </div>
+   </div>
+ 	<!-- Inicio da div de uma questão-->
+   <div class="question" id="Q7-hard">
+      <h1 class="Q:7:H:1-1">Questão 7 - Principal</h1>
+      <p class="Q:7:H:1-1">José, Técnico de Tecnologia da Informação, deve escolher e adquirir o meio de transmissão mais adequado para implementar uma rede local de computadores de uma sala com área de 50 m2 e 10 computadores pessoais.<br>
+Considerando os aspectos técnicos de melhor desempenho e confiabilidade e os aspectos mercadológicos de disponibilidade e custo atuais, a melhor escolha para a tecnologia de transmissão para essa rede é:<br></p>
+      <div class="alternativas">
+
+         <div class="radio">
+            <label><input class="Q:7:H:1-1:A" id="Q:7:H:1-1:A" type="radio" name="1" value="A">A) Conector MT-RJ.</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:7:H:1-1:B" id="Q:7:H:1-1:B" type="radio" name="1" value="B">B) Fibra ótica monomodo.</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:7:H:1-1:C" id="Q:7:H:1-1:C" type="radio" name="1" value="C">C) Par trançado CAT6.</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:7:H:1-1:D" id="Q:7:H:1-1:D" type="radio" name="1" value="D">D) IEEE 802.11b.</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:7:H:1-1:E" id="Q:7:H:1-1:E" type="radio" name="1" value="E">E) Cabo coaxial.</label>
+         </div>
+      </div>
+      <!--<button type="button" id="A7-hard" class="Q:7:H:1-1 btn btn-info btn-lg">Responder</button> -->
+      <button type="button" id="D7-hard" class="D:7:H:1-1 btn btn-info btn-lg" data-toggle="modal" data-target="#tip-Q7-hard">Sugestão</button>
+      <button type="button" id="C7-hard" class="C:7:H:1-1 btn btn-info btn-lg" data-toggle="modal" data-target="#my-contentQ7-hard">Voltar ao conteúdo</button>	
+   </div>
+   <!-- Fim da div de uma questão-->
+   <div id="tip-Q7-hard" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+         <!-- Modal content-->
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="D:7:H:1-1 close" data-dismiss="modal">&times;</button>
+               <h4 class="modal-title">Sugestão para Questão 7</h4>
+            </div>
+            <div class="modal-body">
+               <p>O que é mais adequado para longas distâncias, não é mais adequado para curtas e vice-versa.</p>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="D:7:H:1-1 btn btn-default " data-dismiss="modal">Fechar</button>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- modal que fica escondido para trocar questão -->
+   <div class="container">
+   </div>
+   <!-- para voltar ao conteúdo -->
+   <div id="my-contentQ7-hard" class="modal fade" role="dialog">
+  	<div class="modal-dialog modal-lg">
+
+           <!-- Modal content-->
+           <div class="modal-content">
+              <div class="modal-header">
+                 <button type="button" class="C:7:H:1-1 close" data-dismiss="modal">&times;</button>
+                 <h4 class="modal-title">1-1</h4>
+              </div>
+              <div class="modal-body">
+                 <iframe id="content-frame" src="../c1-1.html"></iframe>
+              </div>
+              <div class="modal-footer">
+                 <button type="button" class="C:7:H:1-1 close" data-dismiss="modal">&times;</button>
+              </div>
+           </div>
+        </div>
+   </div>
+ 	<!-- Inicio da div de uma questão-->
+   <div class="question" id="Q7-easy">
+      <h1 class="Q:7:E:1-1">Questão 7 - Alternativa</h1>
+      <p class="Q:7:E:1-1">Em redes de computadores, os cabos de par trançado vêm substituindo os cabos coaxiais desde o início da década de 1990. Uma das atividades de um técnico de suporte é a crimpagem deste tipo de cabo. Para realizar essa atividade, deve-se:<br></p>
+      <div class="alternativas">
+
+         <div class="radio">
+            <label><input class="Q:7:E:1-1:A" id="Q:7:E:1-1:A" type="radio" name="1" value="A">A) Usar conectores RJ-11.</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:7:E:1-1:B" id="Q:7:E:1-1:B" type="radio" name="1" value="B">B) Escolher o padrão T568A ou o padrão T568B, para que haja conectividade.</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:7:E:1-1:C" id="Q:7:E:1-1:C" type="radio" name="1" value="C">C) Fazer a crimpagem na forma cross-over (cabo cruzado), caso se queira ligar um computador a um switch.</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:7:E:1-1:D" id="Q:7:E:1-1:D" type="radio" name="1" value="D">D) Usar um alicate de blindagem.</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:7:E:1-1:E" id="Q:7:E:1-1:E" type="radio" name="1" value="E">E) Utilizar cabos de par trançado, apesar de terem maior custo no mercado.</label>
+         </div>
+      </div>
+      <!--<button type="button" id="A7-easy" class="Q:7:E:1-1 btn btn-info btn-lg">Responder</button> -->
+      <button type="button" id="A7-easy" class="R:7:E:1-1 btn btn-info btn-lg" onclick="QchangeHard('7')">Responder</button>
+      <button type="button" id="D7-easy" class="D:7:E:1-1 btn btn-info btn-lg" data-toggle="modal" data-target="#tip-Q7-easy">Sugestão</button>
+      <button type="button" id="C7-easy" class="C:7:E:1-1 btn btn-info btn-lg" data-toggle="modal" data-target="#my-contentQ7-easy">Voltar ao conteúdo</button>	
+   </div>
+   <!-- Fim da div de uma questão-->
+   <div id="tip-Q7-easy" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+         <!-- Modal content-->
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="D:7:E:1-1 close" data-dismiss="modal">&times;</button>
+               <h4 class="modal-title">Sugestão para Questão 7</h4>
+            </div>
+            <div class="modal-body">
+               <p>Os cabos mais simples tem o menor custo, assim, os cabos de par trançado são os que são mais utilizados para pequenas redes. Eles possuem dois padrões muito utilizados.</p>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="D:7:E:1-1 btn btn-default " data-dismiss="modal">Fechar</button>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- modal que fica escondido para trocar questão -->
+   <div class="container">
+   </div>
+   <!-- para voltar ao conteúdo -->
+   <div id="my-contentQ7-easy" class="modal fade" role="dialog">
+  	<div class="modal-dialog modal-lg">
+
+           <!-- Modal content-->
+           <div class="modal-content">
+              <div class="modal-header">
+                 <button type="button" class="C:7:E:1-1 close" data-dismiss="modal">&times;</button>
+                 <h4 class="modal-title">1-1</h4>
+              </div>
+              <div class="modal-body">
+                 <iframe id="content-frame" src="../c1-1.html"></iframe>
+              </div>
+              <div class="modal-footer">
+                 <button type="button" class="C:7:E:1-1 close" data-dismiss="modal">&times;</button>
+              </div>
+           </div>
+        </div>
+   </div>
+ 	<!-- Inicio da div de uma questão-->
+   <div class="question" id="Q8-hard">
+      <h1 class="Q:8:H:1-2">Questão 8 - Principal</h1>
+      <p class="Q:8:H:1-2">A tecnologia sem fio para transmitir sinais de rádio de alta velocidade em um caminho de linha de mira entre estações repetidoras espaçadas a uma distância de aproximadamente 50 quilômetros é:<br></p>
+      <div class="alternativas">
+
+         <div class="radio">
+            <label><input class="Q:8:H:1-2:A" id="Q:8:H:1-2:A" type="radio" name="1" value="A">A) O sistema de pager</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:8:H:1-2:B" id="Q:8:H:1-2:B" type="radio" name="1" value="B">B) A microonda terrestre</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:8:H:1-2:C" id="Q:8:H:1-2:C" type="radio" name="1" value="C">C) O telefone celular</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:8:H:1-2:D" id="Q:8:H:1-2:D" type="radio" name="1" value="D">D) Cado de fibra ótica é o melhor meio pra transmissão a distância com microondas</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:8:H:1-2:E" id="Q:8:H:1-2:E" type="radio" name="1" value="E">E) O satélite de comunicação</label>
+         </div>
+      </div>
+      <!--<button type="button" id="A8-hard" class="Q:8:H:1-2 btn btn-info btn-lg">Responder</button> -->
+      <button type="button" id="D8-hard" class="D:8:H:1-2 btn btn-info btn-lg" data-toggle="modal" data-target="#tip-Q8-hard">Sugestão</button>
+      <button type="button" id="C8-hard" class="C:8:H:1-2 btn btn-info btn-lg" data-toggle="modal" data-target="#my-contentQ8-hard">Voltar ao conteúdo</button>	
+   </div>
+   <!-- Fim da div de uma questão-->
+   <div id="tip-Q8-hard" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+         <!-- Modal content-->
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="D:8:H:1-2 close" data-dismiss="modal">&times;</button>
+               <h4 class="modal-title">Sugestão para Questão 8</h4>
+            </div>
+            <div class="modal-body">
+               <p>Normalmente, as estações repetidoras de microondas são alocadas com cerca de 48 Km de distância uma da outra - a curvatura da terra pode ocultar o sinal se essa distancia aumentar.</p>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="D:8:H:1-2 btn btn-default " data-dismiss="modal">Fechar</button>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- modal que fica escondido para trocar questão -->
+   <div class="container">
+   </div>
+   <!-- para voltar ao conteúdo -->
+   <div id="my-contentQ8-hard" class="modal fade" role="dialog">
+  	<div class="modal-dialog modal-lg">
+
+           <!-- Modal content-->
+           <div class="modal-content">
+              <div class="modal-header">
+                 <button type="button" class="C:8:H:1-2 close" data-dismiss="modal">&times;</button>
+                 <h4 class="modal-title">1-2</h4>
+              </div>
+              <div class="modal-body">
+                 <iframe id="content-frame" src="../c1-2.html"></iframe>
+              </div>
+              <div class="modal-footer">
+                 <button type="button" class="C:8:H:1-2 close" data-dismiss="modal">&times;</button>
+              </div>
+           </div>
+        </div>
+   </div>
+ 	<!-- Inicio da div de uma questão-->
+   <div class="question" id="Q8-easy">
+      <h1 class="Q:8:E:1-2">Questão 8 - Alternativa</h1>
+      <p class="Q:8:E:1-2">Uma empresa está montando um ambiente de transmissão de dados com a tecnologia sem fio 802.11n. Para prevenir interferências, deve-se evitar no ambiente o uso de:<br></p>
+      <div class="alternativas">
+
+         <div class="radio">
+            <label><input class="Q:8:E:1-2:A" id="Q:8:E:1-2:A" type="radio" name="1" value="A">A) Controle remoto de TV por infravermelho</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:8:E:1-2:B" id="Q:8:E:1-2:B" type="radio" name="1" value="B">B) Sinais de TV recebidos através de satélites</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:8:E:1-2:C" id="Q:8:E:1-2:C" type="radio" name="1" value="C">C) Alto falantes muito potentes</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:8:E:1-2:D" id="Q:8:E:1-2:D" type="radio" name="1" value="D">D) Forno de micro-ondas</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:8:E:1-2:E" id="Q:8:E:1-2:E" type="radio" name="1" value="E">E) Ímãs poderosos</label>
+         </div>
+      </div>
+      <!--<button type="button" id="A8-easy" class="Q:8:E:1-2 btn btn-info btn-lg">Responder</button> -->
+            <button type="button" id="A8-easy" class="R:8:E:1-2 btn btn-info btn-lg" onclick="QchangeHard('8')">Responder</button>
+      <button type="button" id="D8-easy" class="D:8:E:1-2 btn btn-info btn-lg" data-toggle="modal" data-target="#tip-Q8-easy">Sugestão</button>
+      <button type="button" id="C8-easy" class="C:8:E:1-2 btn btn-info btn-lg" data-toggle="modal" data-target="#my-contentQ8-easy">Voltar ao conteúdo</button>	
+   </div>
+   <!-- Fim da div de uma questão-->
+   <div id="tip-Q8-easy" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+         <!-- Modal content-->
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="D:8:E:1-2 close" data-dismiss="modal">&times;</button>
+               <h4 class="modal-title">Sugestão para Questão 8</h4>
+            </div>
+            <div class="modal-body">
+               <p>Os roteadores possuem uma frequência padrão que depende do padrão de rede sem fio (Sem Fio B, G ou N) e sinais sem fio transmitidos pelo roteador pode não ser capaz de penetrar completamente paredes espessas e outras obstruções mais comuns.<br>Se tiver usando o roteador sem fio G de Linksys, recomenda-se que utilize o Expansor de Frequência Sem Fio G para melhorar o sinal do roteador se estiver numa área grande e tiver várias obstruções entre seu roteador e o dispositivo sem fio.<br><br>Interferências Sem Fio<br>Fontes comuns de interferência são:<br><ul><li>Redes sem fio de vizinhos</li><li>Fornos microondas</li><li>Telefones sem fio 2.4 GHz</li><li>Dispositivos Bluetooth</li><li>Monitores de bebê sem fio</li></ul><br>Para solucionar o problema, altere o canal e o SSID no Ponto de Acesso. Os canais 1, 6 e 11 são os preferidos para serem usados porque não há sobreposição de canais.</p>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="D:8:E:1-2 btn btn-default " data-dismiss="modal">Fechar</button>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- modal que fica escondido para trocar questão -->
+   <div class="container">
+   </div>
+   <!-- para voltar ao conteúdo -->
+   <div id="my-contentQ8-easy" class="modal fade" role="dialog">
+  	<div class="modal-dialog modal-lg">
+
+           <!-- Modal content-->
+           <div class="modal-content">
+              <div class="modal-header">
+                 <button type="button" class="C:8:E:1-2 close" data-dismiss="modal">&times;</button>
+                 <h4 class="modal-title">1-2</h4>
+              </div>
+              <div class="modal-body">
+                 <iframe id="content-frame" src="../c1-2.html"></iframe>
+              </div>
+              <div class="modal-footer">
+                 <button type="button" class="C:8:E:1-2 close" data-dismiss="modal">&times;</button>
+              </div>
+           </div>
+        </div>
+   </div>
+ 	<!-- Inicio da div de uma questão-->
+   <div class="question" id="Q9-hard">
+      <h1 class="Q:9:H:1-2">Questão 9 - Principal</h1>
+      <p class="Q:9:H:1-2">Com relação ao desempenho de uma rede sem fio, analise as afirmativas a seguir.<br><br>
+I. Telefones sem fio de 900 MHz pouco interferem no desempenho de uma rede sem fio 802.11g.<br>
+II. Dispositivos 802.11g não podem operar em modo de compatibilidade com dispositivos 802.11b.<br>
+III. Redes sem fio 802.11n podem operar nas frequências de 2,4 ou 5 GHz.<br><br>
+Assinale:<br></p>
+      <div class="alternativas">
+
+         <div class="radio">
+            <label><input class="Q:9:H:1-2:A" id="Q:9:H:1-2:A" type="radio" name="1" value="A">A) Se somente as afirmativas I e III estiverem corretas.</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:9:H:1-2:B" id="Q:9:H:1-2:B" type="radio" name="1" value="B">B) Se somente as afirmativas I e II estiverem corretas.</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:9:H:1-2:C" id="Q:9:H:1-2:C" type="radio" name="1" value="C">C) Se somente as afirmativas II e III estiverem incorretas.</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:9:H:1-2:D" id="Q:9:H:1-2:D" type="radio" name="1" value="D">D) Se somente a afirmativa II estiver correta.</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:9:H:1-2:E" id="Q:9:H:1-2:E" type="radio" name="1" value="E">E) Se somente a afirmativa III estiver correta.</label>
+         </div>
+      </div>
+      <!--<button type="button" id="A9-hard" class="Q:9:H:1-2 btn btn-info btn-lg">Responder</button> -->
+      <button type="button" id="D9-hard" class="D:9:H:1-2 btn btn-info btn-lg" data-toggle="modal" data-target="#tip-Q9-hard">Sugestão</button>
+      <button type="button" id="C9-hard" class="C:9:H:1-2 btn btn-info btn-lg" data-toggle="modal" data-target="#my-contentQ9-hard">Voltar ao conteúdo</button>	
+   </div>
+   <!-- Fim da div de uma questão-->
+   <div id="tip-Q9-hard" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+         <!-- Modal content-->
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="D:9:H:1-2 close" data-dismiss="modal">&times;</button>
+               <h4 class="modal-title">Sugestão para Questão 9</h4>
+            </div>
+            <div class="modal-body">
+               <p>Como o 802.11b antecede o 802.11g, então, todos os dispositivos 802.11g estão preparados para se comunicar eles.</p>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="D:9:H:1-2 btn btn-default " data-dismiss="modal">Fechar</button>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- modal que fica escondido para trocar questão -->
+   <div class="container">
+   </div>
+   <!-- para voltar ao conteúdo -->
+   <div id="my-contentQ9-hard" class="modal fade" role="dialog">
+  	<div class="modal-dialog modal-lg">
+
+           <!-- Modal content-->
+           <div class="modal-content">
+              <div class="modal-header">
+                 <button type="button" class="C:9:H:1-2 close" data-dismiss="modal">&times;</button>
+                 <h4 class="modal-title">1-2</h4>
+              </div>
+              <div class="modal-body">
+                 <iframe id="content-frame" src="../c1-2.html"></iframe>
+              </div>
+              <div class="modal-footer">
+                 <button type="button" class="C:9:H:1-2 close" data-dismiss="modal">&times;</button>
+              </div>
+           </div>
+        </div>
+   </div>
+ 	<!-- Inicio da div de uma questão-->
+   <div class="question" id="Q9-easy">
+      <h1 class="Q:9:E:1-2">Questão 9 - Alternativa</h1>
+      <p class="Q:9:E:1-2">Considerando que a especificação 802.11 para WLAN (Wireless Local Area Network) define os protocolos de acesso ao meio e de meio físico em uma rede sem fio, onde todos os dispositivos na rede trabalham na faixa de 2.4GHz ou de 5GHz. Assinale a alternativa correta:<br></p>
+      <div class="alternativas">
+
+         <div class="radio">
+            <label><input class="Q:9:E:1-2:A" id="Q:9:E:1-2:A" type="radio" name="1" value="A">A) 802.11n opera na faixa de 2.4GHz e também na faixa de 4GHz</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:9:E:1-2:B" id="Q:9:E:1-2:B" type="radio" name="1" value="B">B) O Padrão 802.11a opera na frequência de 5.91GHz</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:9:E:1-2:C" id="Q:9:E:1-2:C" type="radio" name="1" value="C">C) Uma rede cabeada sofre mais interferência por causa de chuva</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:9:E:1-2:D" id="Q:9:E:1-2:D" type="radio" name="1" value="D">D) Telefones sem fio que trabalham a 900MHz não interferem em uma rede 802.11</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:9:E:1-2:E" id="Q:9:E:1-2:E" type="radio" name="1" value="E">E) As redes sem fio da especificação 802.11 sofrem, em geral, menos interferência do ambiente do que uma fibra ótica</label>
+         </div>
+      </div>
+      <!--<button type="button" id="A9-easy" class="Q:9:E:1-2 btn btn-info btn-lg">Responder</button> -->
+      <button type="button" id="A9-easy" class="R:9:E:1-2 btn btn-info btn-lg" onclick="QchangeHard('9')">Responder</button>
+      <button type="button" id="D9-easy" class="D:9:E:1-2 btn btn-info btn-lg" data-toggle="modal" data-target="#tip-Q9-easy">Sugestão</button>
+      <button type="button" id="C9-easy" class="C:9:E:1-2 btn btn-info btn-lg" data-toggle="modal" data-target="#my-contentQ9-easy">Voltar ao conteúdo</button>	
+   </div>
+   <!-- Fim da div de uma questão-->
+   <div id="tip-Q9-easy" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+         <!-- Modal content-->
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="D:9:E:1-2 close" data-dismiss="modal">&times;</button>
+               <h4 class="modal-title">Sugestão para Questão 9</h4>
+            </div>
+            <div class="modal-body">
+               <p>802.11a opera em 5GHz;<br>802.11b e g opera em 2.4GHz;<br>802.11n opera em 2.4GHz ou 5GHz, sendo compatível com os padrões 802.11abg.</p>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="D:9:E:1-2 btn btn-default " data-dismiss="modal">Fechar</button>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- modal que fica escondido para trocar questão -->
+   <div class="container">
+   </div>
+   <!-- para voltar ao conteúdo -->
+   <div id="my-contentQ9-easy" class="modal fade" role="dialog">
+  	<div class="modal-dialog modal-lg">
+
+           <!-- Modal content-->
+           <div class="modal-content">
+              <div class="modal-header">
+                 <button type="button" class="C:9:E:1-2 close" data-dismiss="modal">&times;</button>
+                 <h4 class="modal-title">1-2</h4>
+              </div>
+              <div class="modal-body">
+                 <iframe id="content-frame" src="../c1-2.html"></iframe>
+              </div>
+              <div class="modal-footer">
+                 <button type="button" class="C:9:E:1-2 close" data-dismiss="modal">&times;</button>
+              </div>
+           </div>
+        </div>
+   </div>
+ 	<!-- Inicio da div de uma questão-->
+   <div class="question" id="Q10-hard">
+      <h1 class="Q:10:H:1-2">Questão 10 - Principal</h1>
+      <p class="Q:10:H:1-2">Um dos meios de transmissão de dados amplamente utilizados na atualidade é o sinal de rádio frequência transmitido pelo ar, devido às vantagens de propagação omnidirecional e a não necessidade do uso de cabo, ou seja, do meio guiado. Dentre as várias frequências de rádio, a transmissão de dados em rádio frequência é realizada utilizando sinais de alta frequência, por exemplo, 2.4GHz, que possui como característica:<br></p>
+      <div class="alternativas">
+
+         <div class="radio">
+            <label><input class="Q:10:H:1-2:A" id="Q:10:H:1-2:A" type="radio" name="1" value="A">A) Não serem susceptíveis à presença de chuva.</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:10:H:1-2:B" id="Q:10:H:1-2:B" type="radio" name="1" value="B">B) A onda trafegar praticamente em linha reta.</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:10:H:1-2:C" id="Q:10:H:1-2:C" type="radio" name="1" value="C">C) Atravessar paredes de alvenaria sem qualquer perda.</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:10:H:1-2:D" id="Q:10:H:1-2:D" type="radio" name="1" value="D">D) A potência do sinal cair abruptamente com o aumento da distância.</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:10:H:1-2:E" id="Q:10:H:1-2:E" type="radio" name="1" value="E">E) Possuir comprimento de onda maior com aumento da frequência.</label>
+         </div>
+      </div>
+      <!--<button type="button" id="A10-hard" class="Q:10:H:1-2 btn btn-info btn-lg">Responder</button> -->
+      <button type="button" id="D10-hard" class="D:10:H:1-2 btn btn-info btn-lg" data-toggle="modal" data-target="#tip-Q10-hard">Sugestão</button>
+      <button type="button" id="C10-hard" class="C:10:H:1-2 btn btn-info btn-lg" data-toggle="modal" data-target="#my-contentQ10-hard">Voltar ao conteúdo</button>	
+   </div>
+   <!-- Fim da div de uma questão-->
+   <div id="tip-Q10-hard" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+         <!-- Modal content-->
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="D:10:H:1-2 close" data-dismiss="modal">&times;</button>
+               <h4 class="modal-title">Sugestão para Questão 10</h4>
+            </div>
+            <div class="modal-body">
+               <p>As ondas eletromasnéticas, principalmente aquelas das faixas de VHF e superiores, propagam‑se em linha reta, sendo chamadas por essa razão de ondas diretas. Frequências inferiores a 3 MHz propagam‑se acompanhando a curvatura da Terra, sendo chamadas por essa razão de ondas de superfície ou terrestres. Esse tipo de onda é responsável pela recepção dos sinais das emissoras de ondas médias (NASCIMENTO, 1992).</p>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="D:10:H:1-2 btn btn-default " data-dismiss="modal">Fechar</button>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- modal que fica escondido para trocar questão -->
+   <div class="container">
+   </div>
+   <!-- para voltar ao conteúdo -->
+   <div id="my-contentQ10-hard" class="modal fade" role="dialog">
+  	<div class="modal-dialog modal-lg">
+
+           <!-- Modal content-->
+           <div class="modal-content">
+              <div class="modal-header">
+                 <button type="button" class="C:10:H:1-2 close" data-dismiss="modal">&times;</button>
+                 <h4 class="modal-title">1-2</h4>
+              </div>
+              <div class="modal-body">
+                 <iframe id="content-frame" src="../c1-2.html"></iframe>
+              </div>
+              <div class="modal-footer">
+                 <button type="button" class="C:10:H:1-2 close" data-dismiss="modal">&times;</button>
+              </div>
+           </div>
+        </div>
+   </div>
+ 	<!-- Inicio da div de uma questão-->
+   <div class="question" id="Q10-easy">
+      <h1 class="Q:10:E:1-2">Questão 10 - Alternativa</h1>
+      <p class="Q:10:E:1-2">Sobre propagação por radio frequência, assinale a alternativa correta:<br></p>
+      <div class="alternativas">
+
+         <div class="radio">
+            <label><input class="Q:10:E:1-2:A" id="Q:10:E:1-2:A" type="radio" name="1" value="A">A) As ondas de rádio VHF propagam-se na 'linha de visada', isto é, em linha reta até onde a visão alcança.</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:10:E:1-2:B" id="Q:10:E:1-2:B" type="radio" name="1" value="B">B) O comprimento da linha de visada (LOS ou Line-of-sight), também chamado de vertical do rádio</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:10:E:1-2:C" id="Q:10:E:1-2:C" type="radio" name="1" value="C">C) Cabos submarinos irradiam onda eletromagnéticas para comunicação entre embarcações</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:10:E:1-2:D" id="Q:10:E:1-2:D" type="radio" name="1" value="D">D) Ondas de alta frequência (HF) tem progagação celeste e linha de visada</label>
+         </div>
+         <div class="radio">
+            <label><input class="Q:10:E:1-2:E" id="Q:10:E:1-2:E" type="radio" name="1" value="E">E) Há apenas um tipo de propagação de onda de radiofrequência: terrestre</label>
+         </div>
+      </div>
+      <!--<button type="button" id="A10-easy" class="Q:10:E:1-2 btn btn-info btn-lg">Responder</button> -->
+      <button type="button" id="A10-easy" class="R:10:E:1-2 btn btn-info btn-lg" onclick="QchangeHard('10')">Responder</button>
+      <button type="button" id="D10-easy" class="D:10:E:1-2 btn btn-info btn-lg" data-toggle="modal" data-target="#tip-Q10-easy">Sugestão</button>
+      <button type="button" id="C10-easy" class="C:10:E:1-2 btn btn-info btn-lg" data-toggle="modal" data-target="#my-contentQ10-easy">Voltar ao conteúdo</button>	
+   </div>
+   <!-- Fim da div de uma questão-->
+   <div id="tip-Q10-easy" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+         <!-- Modal content-->
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="D:10:E:1-2 close" data-dismiss="modal">&times;</button>
+               <h4 class="modal-title">Sugestão para Questão 10</h4>
+            </div>
+            <div class="modal-body">
+               <p>As ondas de rádio VHF não acompanham a curvatura terrestre.</p>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="D:10:E:1-2 btn btn-default " data-dismiss="modal">Fechar</button>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- modal que fica escondido para trocar questão -->
+   <div class="container">
+   </div>
+   <!-- para voltar ao conteúdo -->
+   <div id="my-contentQ10-easy" class="modal fade" role="dialog">
+  	<div class="modal-dialog modal-lg">
+
+           <!-- Modal content-->
+           <div class="modal-content">
+              <div class="modal-header">
+                 <button type="button" class="C:10:E:1-2 close" data-dismiss="modal">&times;</button>
+                 <h4 class="modal-title">1-2</h4>
+              </div>
+              <div class="modal-body">
+                 <iframe id="content-frame" src="../c1-2.html"></iframe>
+              </div>
+              <div class="modal-footer">
+                 <button type="button" class="C:10:E:1-2 close" data-dismiss="modal">&times;</button>
+              </div>
+           </div>
+        </div>
+   </div>
+</body>
+<style type="text/css">
+	.question{
+		visibility: hidden;
+	}
+
+	.tip {
+		visibility: hidden;
+	}
+
+	.btn-default {
+		visibility: hidden;
+	}
+
+	.try-another {
+		visibility: hidden;
+	}
+	#D1-hard, #D1-easy, #C1-hard, #C1-easy,
+	#D2-hard, #D2-easy, #C2-hard, #C2-easy,
+	#D3-hard, #D3-easy, #C3-hard, #C3-easy,
+	#D4-hard, #D4-easy, #C4-hard, #C4-easy,
+	#D5-hard, #D5-easy, #C5-hard, #C5-easy,
+	#D6-hard, #D6-easy, #C6-hard, #C6-easy,
+	#D7-hard, #D7-easy, #C7-hard, #C7-easy,
+	#D8-hard, #D8-easy, #C8-hard, #C8-easy,
+	#D9-hard, #D9-easy, #C9-hard, #C9-easy,
+	#D10-hard, #D10-easy, #C10-hard, #C10-easy
+	{
+		visibility: hidden;
+	}
+
+	#menu{
+		width: 200px;
+		float: left;
+	}
+
+	#containerQuestion{
+		width: 600px;
+		float: left;
+	}
+	#menuTroca1, #menuTroca2, #menuTroca3, #menuTroca4, #menuTroca5, #menuTroca6, #menuTroca7, #menuTroca8, #menuTroca9, #menuTroca10
+	{
+		width: 200px;
+		float: left;
+		visibility: hidden;
+	}
+	
+	iframe {
+		width: 1100px;
+		height: 700px;
+	}
+
+</style>
+
+<script type="text/javascript">
+   console.log("QUESTIONARIO FIRST");
+   var containerQuestion = document.getElementById("containerQuestion");
+   var containerTroca = document.getElementById("menuTroca");
+   var time = setInterval(verificar,1000);
+
+   var qCarregar = localStorage.getItem("qAtual");
+
+    localStorage.setItem ("classIdSection", "1-1,1-1,1-1,1-1,1-1,1-1,1-1,1-2,1-2,1-2");
+
+   if (qCarregar == "-1") { 
+      carregarList(multioption.question[0]);
+   } else {
+      carregarList(qCarregar);
+   }
+
+   function iniciar(idMenu,idquestion){
+      var menu = document.getElementById('menu');
+      menu.innerHTML = document.getElementById(idMenu).innerHTML;
+      containerQuestion.innerHTML = document.getElementById(idquestion).innerHTML;
+   }
+
+  function verificar() {
+    //console.log("idLog: "+multioption.id);
+       //console.log("-------\n charAt(1) " + multioption.id[2].charAt(1));
+      //console.log("======\n substring " + multioption.id[2].substring(1, multioption.id[0].length));
+    if (multioption.status == true && multioption.length == 4) {
+      aux1 = multioption.id[2];
+      aux1 = aux1.split("-");
+      aux2 = aux1[0];
+      console.log("------\nAUX2 " + aux2.substring(1,aux2.length));
+      //console.log("D"+multioption.id[0].substring(1, multioption.id[0].length));
+      //console.log("D"+multioption.id);
+      //console.log("D2"+multioption.id[0]);      
+      //console.log("T" + multioption.id[0].substring(1, multioption.id[0].length));
+      document.getElementById("D"+multioption.id[0].substring(1, multioption.id[0].length)).style.visibility = 'visible';
+      document.getElementById("C"+multioption.id[0].substring(1, multioption.id[0].length)).style.visibility = 'visible';
+
+      //console.log("44idLog4: "+multioption.id[2]);
+      //var bkp = multioption.id
+      //multioption.id = multioption.id[2];
+      //console.log("charAt: "+ multioption.id.charAt(1));
+
+      document.getElementById("menuTroca" + aux2.substring(1,aux2.length)).style.visibility = "visible";  
+
+      //document.getElementById('menuTroca').addEventListener('click',carregar(''));
+    } //str.substring(1, str.length);
+    else if (multioption.status == true && multioption.length == 2) {
+      document.getElementById("D"+multioption.id[0].substring(1, multioption.id[0].length)).style.visibility = 'visible';
+      multioption.status = false;
+    } else if (multioption.status == true && multioption.length == 3) {
+      document.getElementById("D"+multioption.id[0].substring(1, multioption.id[0].length)).style.visibility = 'visible';
+      document.getElementById("C"+multioption.id[0].substring(1, multioption.id[0].length)).style.visibility = 'visible';
+      multioption.status = false;
+    }
+  }
+
+   function QchangeHard(id) {
+      //question a ser carregada
+
+      console.log ("LOADING: " + id);
+      //console.log ("MULTIPOPTION: "+multioption.id);
+      var question = document.getElementById("Q"+id+"-hard");
+      //setando container da question para a questão clicada na lista
+      containerQuestion.innerHTML = question.innerHTML;
+      //console.log('MENU TROCA'+multioption.id[2].charAt(1));
+      //console.log('menuTroca'+multioption.id[2].charAt(1));
+      //document.getElementById('menuTroca'+aux2.substring(1,aux2.length)).style.visibility = 'hidden';      multioption.status = false;
+   }
+
+   function carregar(id) {
+      //question a ser carregada
+        aux1 = id;
+        aux1 = aux1.split("-");
+        aux2 = aux1[0];
+
+      console.log ("LOADING: " + id);
+      console.log ("MULTIPOPTION: "+multioption.id);
+      var question = document.getElementById(id);
+      //setando container da question para a questão clicada na lista
+      containerQuestion.innerHTML = question.innerHTML;
+      console.log('MENU TROCA'+multioption.id[2].charAt(1));
+      console.log('menuTroca'+multioption.id[2].charAt(1));
+      document.getElementById('menuTroca'+aux2.substring(1,aux2.length)).style.visibility = 'hidden';      multioption.status = false;
+   }
+   function carregarList(id) {
+      //question a ser carregada
+      localStorage.setItem ("qAtual", id);
+      console.log ("LOADING: " + id);
+      console.log ("MULTIPOPTION: "+multioption.id);      
+      var question = document.getElementById(id);
+      console.log('MENU TROCA'+multioption.id+"TAM:"+ multioption.length);
+      
+      //console.log("- ------\n charAt(1) " + multioption;.id[2].charAt(1));
+      //console.log("======\n substring " + multioption.id[2].substring(1, multioption.id[0].length));
+      //console.log("-------\nMULTOPTION[2] " + multioption.id[2]);
+      if (multioption.length == 4){
+
+        aux1 = multioption.id[2];
+        aux1 = aux1.split("-");
+        aux2 = aux1[0];
+        console.log("------\nAUX2 " + aux2.substring(1,aux2.length));
+        console.log("-------\nMULTOPTION[2] " + multioption.id[2]);
+         document.getElementById('menuTroca'+aux2.substring(1,aux2.length)).style.visibility = 'hidden';
+      }
+      //setando container da question para a questão clicada na lista
+      containerQuestion.innerHTML = question.innerHTML;
+
+      //id="Q:3:H:1-3:E"
+      arrayIdSections = localStorage.getItem ("classIdSection");
+      arrayIdSections = arrayIdSections.split(",");
+      aux1 = id;
+      console.log("+++++++");
+      aux1 = id.split("Q");
+      console.log(aux1);
+      aux1 = aux1[1];
+      console.log(aux1);
+      aux1 = aux1.split("-");
+      console.log(aux1);
+      aux2 = aux1[1];
+      aux1 = aux1[0];
+      console.log(aux1);
+      indice = parseInt(aux1);
+      console.log("=====-==== " + aux2 );
+      if (aux2[0] == "h") {
+         if (answerlist[indice-1] != "0"){
+            console.log("STRING FORMADA: Q:"+indice+":H:"+arrayIdSections[indice-1]+ ":"+answerlist[indice-1]);
+            document.getElementById("Q:"+indice+":H:"+arrayIdSections[indice-1]+ ":"+answerlist[indice-1]).checked = true;
+         } 
+      }  else if (aux2[0] == "e" && answerlist[indice-1+10] != "0"){
+            console.log("STRING FORMADA: Q:"+indice+":E:"+arrayIdSections[indice-1]+ ":"+answerlist[indice-1+10]);
+            document.getElementById("Q:"+indice+":E:"+arrayIdSections[indice-1]+ ":"+answerlist[indice-1+10]).checked = true;
+         }
+      multioption.status = false;
+   }
+  function carregarHTML(id){
+    var vet = id.split(':');
+    var index = vet[3].split('-');
+    var idcapt = index[0];
+    var iditem = index[1];
+    var link;
+    //console.log("idcapt: "+idcapt);
+    var info = $.getJSON("../../../info.json", function(data) {
+      
+      console.log("dataC: " + data.chapter);
+      if(data.chapter == idcapt){
+        for (var j = 0; j < Object.keys(data['itens']).length - 1; j++) {
+          if(data['itens'][j]['id-item'] == vet[3]) {
+            link = data['itens'][j]['href'];
+            //console.log(data['itens'][j]['href'],link);
+            document.getElementById('content-frame').src = '../' + link;
+            break;
+          }
+        }
+      } 
+    });
+    }
+</script>
+</html>

@@ -1,0 +1,9 @@
+Em canteiros de obras de construção civil é comum perceber trabalhadores realizando medidas de comprimento e de ângulos e fazendo demarcações por onde a obra deve começar ou se erguer. Em um desses canteiros foram feitas algumas marcas no chão plano. Foi possível perceber que, das seis estacas colocadas, três eram vértices de um triângulo retângulo e as outras três eram os pontos médios dos lados desse triângulo, conforme pode ser visto na figura, em que as estacas foram indicadas por letras.
+FALTAIMAGEM
+A região demarcada pelas estacas A, B, M e N deveria ser calçada com concreto. Nessas condições, a área a ser calçada corresponde
+# ao triplo da área do triângulo MNC. 
+# à mesma área do triângulo AMC. 
+# ao dobro da área do triângulo MNC. 
+# à metade da área formada pelo triângulo ABC. 
+# à mesma área do triângulo BNC. 
+

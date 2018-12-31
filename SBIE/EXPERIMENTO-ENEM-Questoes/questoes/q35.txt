@@ -1,0 +1,14 @@
+Em um experimento, um grupo de voluntários recebeu, inicialmente, alimento comum e depois uma dieta de especificação rigorosa. As suas necessidades proteicas foram satisfeitas por aminoácidos; a necessidade de massa, por gorduras essenciais; e a necessidade de carboidrato, por glicose ou uma mistura de glicose e sacarose (açúcar comum). As fases do experimento são descritas a seguir.
+1. Nas primeiras quatro semanas, os indivíduos comeram alimentos comuns.
+2. Da 4ª à 8ª semana, o suprimento de carboidrato foi apenas glicose.
+3. Da 8ª à 12ª semana, a fonte de carboidrato foi mista; com 75% de glicose e 25% de sacarose.
+4. Após a 12ª semana, a fonte de carboidrato voltou a ser glicose (como na fase 2).
+O gráfico acima mostra os resultados obtidos nesse experimento, em termos de taxa de colesterol no sangue (em mg/dL) ao longo de 19 semanas.
+(Trad.). São Paulo: Best Seller, 1988, p. 72 PAULING, L. Como viver mais e melhor. 8Ed. Cristiane Perez Ribeiro (adaptado).
+Do experimento descrito, é correto concluir que o nível de colesterol no sangue pode ser diminuído com a redução da ingestão de
+# glicose. 
+# carboidratos. 
+# aminoácidos. 
+# açúcar comum. 
+# gorduras essenciais. 
+
