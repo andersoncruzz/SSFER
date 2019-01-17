@@ -1,0 +1,33 @@
+Acuracia do modelo: weights.03-1.35.hdf5
+0.5192689709972189
+
+Confusion_matrix:
+
+	angry	disgusted	fearful	happy	sad	surprised	neutral	
+0	129	19	52	577	266	118	390	
+1	54	125	15	357	111	42	332	
+2	29	16	93	491	205	246	344	
+3	36	42	35	4925	246	166	425	
+4	84	35	75	628	681	97	538	
+5	5	7	70	526	114	1661	272	
+6	49	47	83	699	431	96	1535	
+
+
+Classification Report:
+
+              precision    recall  f1-score   support
+
+       angry       0.33      0.08      0.13      1551
+   disgusted       0.43      0.12      0.19      1036
+     fearful       0.22      0.07      0.10      1424
+       happy       0.60      0.84      0.70      5875
+         sad       0.33      0.32      0.32      2138
+   surprised       0.68      0.63      0.65      2655
+     neutral       0.40      0.52      0.45      2940
+
+   micro avg       0.52      0.52      0.52     17619
+   macro avg       0.43      0.37      0.36     17619
+weighted avg       0.48      0.52      0.48     17619
+
+
+
