@@ -9,8 +9,11 @@ from keras import backend as K
 import keras
 from keras.models import load_model
 import sys, os
-from faceDetector.faceDetector import FaceDetector
+# import faceDetector.faceDetector.FaceDetector
 import numpy as np
+
+from faceDetector import FaceDetector
+
 
 def padding_bounding_box(bb, img_size, padding=32):
     bounding_box = np.zeros(4, dtype=np.int32)
