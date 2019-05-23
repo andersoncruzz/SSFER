@@ -2,3 +2,7 @@ databases
 files_python
 __pycache__
 model/
+emotions_database_with_faces_extracted/
+mestrado_finish/
+.ipynb_checkpoints/
+.idea/

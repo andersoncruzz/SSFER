@@ -16,7 +16,7 @@ label_path = ["CIFE-label-tr.npy", "ck+-label.npy", "JAFFE-label.npy", "novaemot
                 "CIFE-label-ts.npy", "fer_labels.npy", "KDEF-label.npy", "RafD-label.npy"]
 
 root_input = "emotions_database_with_faces_extracted"
-path_input_base_name = "output_210"
+path_input_base_name = "output_60"
 
 if len(data_path) != len(label_path):
     print("[+] ERROR SIZE DATA AND LABEL ARE DIFFERENT")

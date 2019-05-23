@@ -39,8 +39,9 @@ def getDataPath():
     KDEF_DATA = os.path.join(pwd, 'KDEF-data.npy')
     NOVAEMOTIONS_DATA = os.path.join(pwd, 'novaemotions-data.npy')
     RAFD_DATA = os.path.join(pwd, 'RafD-data.npy')
-    return [CIFE_TR_DATA, CIFE_TS_DATA, CK_DATA, FER_DATA, JAFFE_DATA, KDEF_DATA, NOVAEMOTIONS_DATA, RAFD_DATA]
-    # return [RAFD_DATA]
+    # return [CIFE_TR_DATA, CIFE_TS_DATA, CK_DATA, FER_DATA, JAFFE_DATA, KDEF_DATA, NOVAEMOTIONS_DATA, RAFD_DATA]
+    return [RAFD_DATA]
+
 def getLabelsPath():
     CIFE_TR_LABELS = os.path.join(pwd, 'CIFE-label-tr.npy')
     CIFE_TS_LABELS = os.path.join(pwd, 'CIFE-label-ts.npy')
@@ -50,4 +51,5 @@ def getLabelsPath():
     KDEF_LABELS = os.path.join(pwd, 'KDEF-label.npy')
     NOVAEMOTIONS_LABELS = os.path.join(pwd, 'novaemotions-label.npy')
     RAFD_LABELS = os.path.join(pwd, 'RafD-label.npy')
-    return [CIFE_TR_LABELS, CIFE_TS_LABELS, CK_LABELS, FER_LABELS, JAFFE_LABELS, KDEF_LABELS, NOVAEMOTIONS_LABELS, RAFD_LABELS]
+    # return [CIFE_TR_LABELS, CIFE_TS_LABELS, CK_LABELS, FER_LABELS, JAFFE_LABELS, KDEF_LABELS, NOVAEMOTIONS_LABELS, RAFD_LABELS]
+    return [RAFD_LABELS]

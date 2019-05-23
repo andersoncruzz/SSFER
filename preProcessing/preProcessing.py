@@ -157,6 +157,31 @@ class PreProcessing:
     def load_from_file(self, path):
         return np.load(path)
 
+    def validateCoordinate(self, coordinate, size):
+        #print(coordinate)
+        #print("size: ", type(size))
+        coordinate = list(coordinate)
+        if coordinate[0] > size:
+            coordinate[0] = size
+        if coordinate[1] > size:
+            coordinate[1] = size
+        if coordinate[2] > size:
+            coordinate[2] = size
+        if coordinate[3] > size:
+            coordinate[3] = size
+
+        if coordinate[0] < 0:
+            coordinate[0] = 0
+        if coordinate[1] < 0:
+            coordinate[1] = 0
+        if coordinate[2] < 0:
+            coordinate[2] = 0
+        if coordinate[3] < 0:
+            coordinate[3] = 0
+
+        return tuple(coordinate)
+
+
     def resize_all_images_label(self, size, path_load, path_output, path_label, faceDetector=None, save=True):
         #TODO: Verify others possible resize processing, cubic, linear, etc, upsample
         new_images = []
@@ -165,21 +190,24 @@ class PreProcessing:
         images = np.load(path_load)
         labels = np.load(path_label)
 
-        print("[+] SIZE: ", size)
+        #print("[+] SIZE: ", size)
 
         if len(images) != len(labels):
             print("[+] ERROR LABEL AND IMAGE SIZE DIFFERENCE")
             return False
 
         for index in range(len(images)):
-            coordinates = faceDetector.detectCNN(images[index])
+            coordinates = faceDetector.detectMTCNN(images[index])
 
             if coordinates != []:
                 bbox = coordinates[0]
                 # cv2.imshow("img1", images[index])
                 # cv2.waitKey(25)
-                print(index)
+                #print(index)
+                #print(bbox)
                 img = images[index]
+                #print(img.shape)
+                bbox = self.validateCoordinate(bbox, img.shape[0])
                 img = img[bbox[0]:bbox[2], bbox[3]:bbox[1]]
 
                 img = cv2.resize(img, (size, size))
