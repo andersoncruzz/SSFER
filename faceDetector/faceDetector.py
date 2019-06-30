@@ -72,6 +72,7 @@ class FaceDetector:
                 continue
 
             bb = rt["box"]
+            bb = [0 if x < 0 else x for x in list(bb)]
             #bb[1], bb[2], bb[3], bb[0]
             bbs.append((bb[1],  bb[2] + bb[0], bb[3] + bb[1], bb[0]))
 

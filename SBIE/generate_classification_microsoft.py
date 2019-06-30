@@ -21,7 +21,7 @@ def makedirs(path):
         os.makedirs(path)
 
 def main():
-    LOG_PATH = "/home/anderson/projetos/SBIE-logs-photos/file_photos"
+    LOG_PATH = "/home/anderson/Projetos/exp_SBIE/logs-photos/file_photos"
     OLD_PATH = "experimento_pkg/logs-classification"
     NEW_PATH = "experimento_pkg/logs-MICROSOFT"
 

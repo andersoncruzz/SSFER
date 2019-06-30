@@ -4,6 +4,7 @@ import os
 import json
 import shutil
 import operator
+import cv2
 
 ALUNOS = ["Adrianeleite", "Amandacruz", "Artumirapriscila", "Brendo", "BrunaEvellyn", \
           "Emilyoliveira", "Giovanamaia", "Henrique", "Joeyramone", "Ligiabarbosa", \
@@ -24,14 +25,19 @@ def makedirs(path):
     if not os.path.exists(path):
         os.makedirs(path)
 
+def copy (path_input, path_output):
+    img = cv2.imread(path_input)
+    img = cv2.resize(img, (213, 160))
+    cv2.imwrite(path_output, img)
+
 def main():
 
     microsoft = False
 
     if microsoft:
-        PATH = "/home/anderson/projetos/SSFER/SBIE/experimento_pkg/logs-MICROSOFT"
+        PATH = "experimento_pkg/logs-MICROSOFT"
     else:
-        PATH = "/home/anderson/projetos/SSFER/SBIE/experimento_pkg/logs_SSFER_2"
+        PATH = "experimento_pkg/logs_SSFER_2"
 
     users = os.listdir(PATH)
     for user_type in users:
@@ -42,13 +48,13 @@ def main():
             user = user_type.split(".")[0]
             print(user)
             if microsoft:
-                user_path = "/home/anderson/projetos/SBIE-logs-photos-split/microsoft/" + user
+                user_path = "/home/anderson/Projetos/SBIE-logs-photos-split/microsoft/" + user
             else:
-                user_path = "/home/anderson/projetos/SBIE-logs-photos-split/SSFER_65/" + user
+                user_path = "/home/anderson/Projetos/SBIE-logs-photos-split/SSFER_65/" + user
 
             makedirs(user_path)
 
-            user_path_original = "/home/anderson/projetos/SBIE-logs-photos/" + ALUNOS[ALUNOS_ID.index(user)]
+            user_path_original = "/home/anderson/Projetos/exp_SBIE/logs-photos/" + ALUNOS[ALUNOS_ID.index(user)]
 
             for line in fp:
                 objs = line.replace("\n", "").split("$")
@@ -64,18 +70,19 @@ def main():
                     emotion = max(obj[0]["scores"].items(), key=operator.itemgetter(1))[0]
                     if obj[0]["scores"][emotion] > 0.65:
                         makedirs(os.path.join(user_path, emotion))
-                        shutil.copy(os.path.join(user_path_original, objs[0]), os.path.join(user_path, emotion, objs[0]))
+                        # shutil.copy(os.path.join(user_path_original, objs[0]), os.path.join(user_path, emotion, objs[0]))
+                        copy(os.path.join(user_path_original, objs[0]), os.path.join(user_path, emotion, objs[0]))
                         print(objs[0])
                     else:
                         #FOTOS SEM CLASSIFICACAO
                         makedirs(os.path.join(user_path, "no_classification"))
-                        shutil.copy(os.path.join(user_path_original, objs[0]), os.path.join(user_path, "no_classification", objs[0]))
-
+                        # shutil.copy(os.path.join(user_path_original, objs[0]), os.path.join(user_path, "no_classification", objs[0]))
+                        copy(os.path.join(user_path_original, objs[0]), os.path.join(user_path, "no_classification", objs[0]))
                 else:
                     #FOTOS SEM CLASSIFICACAO
                     makedirs(os.path.join(user_path, "no_classification"))
-                    shutil.copy(os.path.join(user_path_original, objs[0]), os.path.join(user_path, "no_classification", objs[0]))
-
+                    # shutil.copy(os.path.join(user_path_original, objs[0]), os.path.join(user_path, "no_classification", objs[0]))
+                    copy(os.path.join(user_path_original, objs[0]), os.path.join(user_path, "no_classification", objs[0]))
 
                     # shutil.copy(, user_path)
 

@@ -5,7 +5,9 @@ import os
 import cv2
 from keras.models import load_model
 import sys
+sys.path.append("../")
 from faceDetector.faceDetector import FaceDetector
+# from . import FaceDetector
 import numpy as np
 import json
 
@@ -23,6 +25,20 @@ ALUNOS_ID = ["aluno1", "aluno2", "aluno3", "aluno4", "aluno5", \
             "aluno16", "aluno17", "aluno18", "aluno19", "aluno20", \
              "aluno21", "aluno22", "aluno23", "aluno24", "aluno25", \
              "aluno26", "aluno27"]
+
+class NumpyEncoder(json.JSONEncoder):
+    """ Special json encoder for numpy types """
+    def default(self, obj):
+        if isinstance(obj, (np.int_, np.intc, np.intp, np.int8,
+            np.int16, np.int32, np.int64, np.uint8,
+            np.uint16, np.uint32, np.uint64)):
+            return int(obj)
+        elif isinstance(obj, (np.float_, np.float16, np.float32,
+            np.float64)):
+            return float(obj)
+        elif isinstance(obj,(np.ndarray,)): #### This is the fix
+            return obj.tolist()
+        return json.JSONEncoder.default(self, obj)
 
 def padding_bounding_box(bb, img_size, padding=32):
     bounding_box = np.zeros(4, dtype=np.int32)
@@ -76,8 +92,8 @@ def get_coordinate_emoji(bb, img_size):
 
 def classify(net, img, faceDetector, img_size):
     faces = []
-    coordinates = faceDetector.detectHogSVM(img)
-
+    # coordinates = faceDetector.detectHogSVM(img)
+    coordinates = faceDetector.detectMTCNN(img)
     for coordinate in coordinates:
         face = {}
         face["bounding_box"] = padding_bounding_box(coordinate, img_size)
@@ -88,9 +104,11 @@ def classify(net, img, faceDetector, img_size):
 
 def classify_microsoft(net, img, faceDetector, img_size):
     _to_microsoft = []
-    coordinates = faceDetector.detectHogSVM(img)
+    # coordinates = faceDetector.detectHogSVM(img)
+    coordinates = faceDetector.detectMTCNN(img)
 
     for coordinate in coordinates:
+        print(coordinate)
         face = {}
         face['bounding_box'] = padding_bounding_box(coordinate, img_size)
 
@@ -116,12 +134,13 @@ def classify_microsoft(net, img, faceDetector, img_size):
 
         _to_microsoft.append(faceEmotion)
 
-    print("faceEmotion: ", _to_microsoft)
+    # print("faceEmotion: ", _to_microsoft)
     return _to_microsoft
 
 def add_logs(user, photo, faces_):
-    faces = json.dumps(faces_)
-    path = "/home/anderson/projetos/SSFER/SBIE/experimento_pkg/logs_SSFER_2"
+
+    faces = json.dumps(faces_, cls=NumpyEncoder)
+    path = "experimento_pkg/logs_SSFER_2"
     makedirs(path)
     user_1 = ALUNOS_ID[ALUNOS.index(user)]
     f = open(os.path.join(path, user_1 + ".csv"), "a+")
@@ -154,15 +173,16 @@ def add_overlays(frame, faces, EMOTIONS, feelings_faces, img_size):
 
 
 def readFile (user):
-   with open ("../../SBIE-logs-photos/file_photos/"+user+".txt") as fp:
+   #/home/anderson/Projetos/exp_SBIE/logs-photos/file_photos
+   with open ("/home/anderson/Projetos/exp_SBIE/logs-photos/file_photos/"+user+".txt") as fp:
       for line in fp:
          photo = line.replace("\n", "")
-         print(photo)
+         # print(photo)
          # send(user, photo)
 
 def send(user, foto):
     data = classify()
-    log = open("/home/acruz/Documents/EXPERIMENTO-SBIE/logs-classification/"+user+".csv", "a+")
+    log = open("experimento_pkg/logs-classification/"+user+".csv", "a+")
     log.write(foto +"$"  + data  + "\n")
     log.close()
 
@@ -188,33 +208,38 @@ def main(args):
 
     net = load_model(PATH_NET_INPUT)
 
-    faceDetector = FaceDetector()
+    faceDetector = FaceDetector(mtcnn=True)
 
-    users = os.listdir("/home/anderson/projetos/SBIE-logs-photos")
+    users = os.listdir("/home/anderson/Projetos/exp_SBIE/logs-photos")
     for user in users:
-        if user == "file_photos" or user == "BKP-FOTOS" or user =="gisevitor" or user == "MatheusLima":
+        print(user)
+        if user == "file_photos" or user == "BKP-FOTOS" or user =="gisevitor" or user == "MatheusLima"\
+                or user == "BrunaEvellyn.txt" or user == "gisevitor.csv" or user == "Henrique.txt"\
+                or user == "NOTLOGCLICK":
             continue
 
-        with open("/home/anderson/projetos/SBIE-logs-photos/file_photos/" + user + ".txt") as fp:
+        with open("/home/anderson/Projetos/exp_SBIE/logs-photos/file_photos/" + user + ".txt") as fp:
             for line in fp:
                 photo = line.replace("\n", "")
-                # print(photo)
+                print(photo)
                 # send(user, photo)
 
                 # Capture frame-by-frame
-                print("/home/anderson/projetos/SBIE-logs-photos/" + user + "/" + photo)
-                frame = cv2.imread("/home/anderson/projetos/SBIE-logs-photos/" + user + "/" + photo)
-                img_size = np.asarray(frame.shape)[0:2]
-
+                # print("/home/anderson/Projetos/exp_SBIE/logs-photos/" + user + "/" + photo)
+                frame = cv2.imread("/home/anderson/Projetos/exp_SBIE/logs-photos/" + user + "/" + photo)
+                try:
+                    img_size = np.asarray(frame.shape)[0:2]
+                except AttributeError as error:
+                    continue
                 # faces = classify(net, frame, faceDetector, img_size)
                 faces_microsoft = classify_microsoft(net, frame, faceDetector, img_size)
 
                 add_overlays(frame, faces_microsoft, EMOTIONS_pt, feelings_faces, img_size)
-                # add_logs(user, photo, faces_microsoft)
+                add_logs(user, photo, faces_microsoft)
                 #
                 # # cv2.imshow('Video', frame)
                 cv2.imshow("window", frame)
-                cv2.waitKey(200)
+                cv2.waitKey(20)
     # When everything is done, release the capture
     cv2.destroyAllWindows()
 

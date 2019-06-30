@@ -29,9 +29,9 @@ def main():
     microsoft = False
 
     if microsoft:
-        PATH = "/home/anderson/projetos/SSFER/SBIE/experimento_pkg/logs-MICROSOFT"
+        PATH = "experimento_pkg/logs-MICROSOFT"
     else:
-        PATH = "/home/anderson/projetos/SSFER/SBIE/experimento_pkg/logs_SSFER_2"
+        PATH = "experimento_pkg/logs_SSFER_2"
 
     users = os.listdir(PATH)
     for user_type in users:
@@ -42,13 +42,13 @@ def main():
             user = user_type.split(".")[0]
             print(user)
             if microsoft:
-                user_path = "/home/anderson/projetos/SBIE-logs-photos-split/microsoft/" + user
+                user_path = "/home/anderson/Projetos/SBIE-logs-photos-split/microsoft/" + user
             else:
-                user_path = "/home/anderson/projetos/SBIE-logs-photos-split/SSFER_65/" + user
+                user_path = "/home/anderson/Projetos/SBIE-logs-photos-split/SSFER_65/" + user
 
             makedirs(user_path)
 
-            user_path_original = "/home/anderson/projetos/SBIE-logs-photos/" + ALUNOS[ALUNOS_ID.index(user)]
+            user_path_original = "/home/anderson/Projetos/exp_SBIE/logs-photos/" + ALUNOS[ALUNOS_ID.index(user)]
 
             for line in fp:
                 objs = line.replace("\n", "").split("$")
